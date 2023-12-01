@@ -3,8 +3,8 @@
 A React component to view recent [scrobbles](https://www.dictionary.com/browse/scrobble) for a provided [last.fm](last.fm) user, built with:
 
 <div style="display: flex; gap: 1em; margin: 1em 0;">
-  <img src="./images/Preview_1.png" style="border-radius: 10px"/>
-  <img src="./images/Preview_2.png" style="border-radius: 10px"/>
+  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_1.png" style="border-radius: 10px"/>
+  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
 </div>
 
 -   `tailwind`, `daisyui`
