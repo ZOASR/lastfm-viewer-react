@@ -1,0 +1,3 @@
+.varText {
+	font-size: clamp(0.2em, 3vw, 1em);
+}
