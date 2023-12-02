@@ -123,16 +123,16 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 								boxShadow: `0 0 20px ${colors?.secondary}99`,
 							}}
 						>
-							{track?.lastfmImages ? (
-								<img
-									className="object-cover w-min overflow-hidden"
-									src={track.lastfmImages[3]["#text"]}
-									alt="Album Cover"
-								/>
-							) : track?.MBImages ? (
+							{track?.MBImages ? (
 								<img
 									className="object-cover w-min overflow-hidden"
 									src={track.MBImages[0].image}
+									alt="Album Cover"
+								/>
+							) : track?.lastfmImages ? (
+								<img
+									className="object-cover w-min overflow-hidden"
+									src={track.lastfmImages[3]["#text"]}
 									alt="Album Cover"
 								/>
 							) : (
