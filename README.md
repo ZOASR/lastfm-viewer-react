@@ -2,15 +2,15 @@
 
 A React component to view recent [scrobbles](https://www.dictionary.com/browse/scrobble) for a provided [last.fm](last.fm) user, built with:
 
-<div style="display: flex; gap: 1em; margin: 1em 0;">
-  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_1.png" style="border-radius: 10px"/>
-  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
-</div>
-
 -   `tailwind`, `daisyui`
 -   `vite`
 -   `lastfm-ts-api`
 -   `color.js`
+
+<div style="display: flex; gap: 1em; margin: 1em 0;">
+  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_1.png" style="border-radius: 10px"/>
+  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
+</div>
 
 ## Features:
 
@@ -26,7 +26,7 @@ npm i react-lastfm-viewer
 
 to start using the component you first need to get a last.fm API key from [here](https://www.last.fm/api), once you've done that just import the component and specify the username of the user you want to get scrobbling information from:
 
-> [!INFO] Please note that some users set their profile stats to private, so not every user is applicable, if you're using this component on your personal account just set your "Recent listening" stats to public [here](https://www.last.fm/settings/privacy)
+> Please note that some users set their profile stats to private, so not every user is applicable, if you're using this component on your personal account just set your "Recent listening" stats to public [here](https://www.last.fm/settings/privacy)
 
 ```tsx
 import ReactLastFMViewer from "react-lastfm-viewer";
@@ -58,4 +58,4 @@ function App() {
 }
 ```
 
-> [!WARNING] setting the `updateInterval` prop to a low number might subject your api key for termination, to avoid this just use a higher more reasonable number.
+> setting the `updateInterval` prop to a low number might subject your api key for termination, to avoid this just use a higher more reasonable number.
