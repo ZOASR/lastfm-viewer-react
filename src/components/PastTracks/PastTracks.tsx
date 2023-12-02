@@ -29,7 +29,9 @@ const PastTracks = () => {
 					Past tracks
 				</div>
 				<ol>
-					{context.track?.pastTracks
+					{context.track instanceof Error
+						? ""
+						: context.track?.pastTracks
 						? cloneArray(context.track?.pastTracks)
 								.splice(1, context.track?.pastTracks.length)
 								.map((track_) => {

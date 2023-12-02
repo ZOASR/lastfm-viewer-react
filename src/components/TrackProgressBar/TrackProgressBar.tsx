@@ -45,20 +45,24 @@ const TrackProgressBar = () => {
 				<span className="text-xs">00:00</span>
 				<progress
 					className="progress mx-auto w-10/12"
-					max={context.track ? context.track?.duration / 1000 : 0}
+					max={
+						context.track instanceof Error
+							? 0
+							: context.track
+							? context.track?.duration / 1000
+							: 0
+					}
 				></progress>
 				<span className="text-xs">
-					{context.track
+					{context.track instanceof Error
+						? " "
+						: context.track
 						? context.track.duration > 0
-							? msToMins(context.track?.duration)
-							: "--"
-						: "--"}
-					:
-					{context.track
-						? context.track.duration > 0
-							? msToSecs(context.track?.duration)
-							: "--"
-						: "--"}
+							? `${msToMins(context.track?.duration)}:${msToSecs(
+									context.track?.duration
+							  )}`
+							: "--:--"
+						: "--:--"}
 				</span>
 			</div>
 		</>
