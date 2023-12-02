@@ -56,7 +56,6 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 				setMessage(data.message.replace("lastfm-ts-api: ", ""));
 				setLoading(false);
 			} else {
-				console.log(data);
 				setTrack(data);
 				setLoading(false);
 			}
