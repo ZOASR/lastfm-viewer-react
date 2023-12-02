@@ -58,13 +58,13 @@ const getCAACoverArt = async (releaseMBid: string): Promise<Image[]> => {
 export const getLatestTrack = async (
 	username: string,
 	api_key: string
-): Promise<TrackInfo> => {
-	let trackName: string;
-	let artistName: string;
-	let albumTitle: string | undefined;
-	let lastfmImages: LastFmImage[] | undefined;
-	let isNowplaying: boolean;
-	let duration: number;
+): Promise<TrackInfo | Error> => {
+	let trackName: string = "";
+	let artistName: string = "";
+	let albumTitle: string | undefined = undefined;
+	let lastfmImages: LastFmImage[] | undefined = undefined;
+	let isNowplaying: boolean = false;
+	let duration: number = 0;
 	let pasttracks;
 
 	const user = new LastFMUser(api_key);
@@ -73,34 +73,38 @@ export const getLatestTrack = async (
 		user: username, //optional
 		limit: 5, //optional, default is 50
 	};
+	let userData;
+	let trackInfo;
 
-	const data = await user.getRecentTracks(opt);
-	if (data) {
-		trackName = data.recenttracks.track[0].name;
-		artistName = data.recenttracks.track[0].artist["#text"];
-		pasttracks = data.recenttracks.track;
-	} else {
-		trackName = "";
-		artistName = "";
+	try {
+		userData = await user.getRecentTracks(opt);
+
+		trackName = userData.recenttracks.track[0].name;
+		artistName = userData.recenttracks.track[0].artist["#text"];
+		pasttracks = userData.recenttracks.track;
+
+		if ("@attr" in userData.recenttracks.track[0])
+			isNowplaying =
+				userData.recenttracks.track[0]["@attr"]?.nowplaying == "true";
+		else isNowplaying = false;
+	} catch (error) {
+		if (error instanceof Error) {
+			return error;
+		}
 	}
 
-	if ("@attr" in data.recenttracks.track[0])
-		isNowplaying =
-			data.recenttracks.track[0]["@attr"]?.nowplaying == "true";
-	else isNowplaying = false;
-
-	const trackInfo = await track.getInfo({
-		track: trackName,
-		artist: artistName,
-	});
-	if (trackInfo) {
+	try {
+		trackInfo = await track.getInfo({
+			track: trackName,
+			artist: artistName,
+		});
 		albumTitle = trackInfo.track.album?.title;
 		lastfmImages = trackInfo.track.album?.image;
 		duration = parseInt(trackInfo.track.duration);
-	} else {
-		duration = 0;
-		albumTitle = "";
-		lastfmImages = undefined;
+	} catch (error) {
+		if (error instanceof Error) {
+			return error;
+		}
 	}
 
 	const releases: Release[] | null = await getMBTrackReleases(
@@ -109,8 +113,7 @@ export const getLatestTrack = async (
 		albumTitle
 	);
 
-	let LatestTrack: TrackInfo;
-	LatestTrack = {
+	let LatestTrack: TrackInfo = {
 		trackName: trackName,
 		artistName: artistName,
 		albumTitle: albumTitle,
@@ -121,7 +124,7 @@ export const getLatestTrack = async (
 		duration: duration,
 	};
 
-	if (releases)
+	if (releases) {
 		for (let release of releases) {
 			const rleaseInfo: ReleaseInfo = await getMBReleaseInfo(release.id);
 			if (
@@ -144,5 +147,6 @@ export const getLatestTrack = async (
 			}
 			await wait(1000);
 		}
+	}
 	return LatestTrack;
 };
