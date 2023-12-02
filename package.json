@@ -3,6 +3,19 @@
   "private": false,
   "version": "0.0.3",
   "description": "A React component to view recent scrobbles for a last.fm user",
+  "keywords": [
+    "lastfm",
+    "last.fm",
+    "last.fm",
+    "react",
+    "music",
+    "scrobbling",
+    "react-component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZOASR/react-lastfm-viewer.git"
+  },
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
