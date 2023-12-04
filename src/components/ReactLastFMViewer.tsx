@@ -1,5 +1,5 @@
-import { createContext, useEffect, useState } from "react";
-import { getLatestTrack, TrackInfo } from "./lastfm";
+import { createContext } from "react";
+import { TrackInfo } from "./lastfm";
 
 import TrackProgressBar from "./TrackProgressBar/TrackProgressBar";
 import PastTracks from "./PastTracks/PastTracks";
@@ -8,8 +8,6 @@ import { MdOutlinePerson3 } from "react-icons/md";
 import { FaLastfmSquare } from "react-icons/fa";
 import { FaCompactDisc } from "react-icons/fa";
 import { SiMusicbrainz } from "react-icons/si";
-
-import { prominent } from "color.js";
 
 import disc from "./disc.svg";
 import "../index.css";
