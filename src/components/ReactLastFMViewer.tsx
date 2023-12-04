@@ -43,6 +43,11 @@ export const lfmContext = createContext<{
 	},
 });
 
+const unexpectedErrors = [
+	"NetworkError when attempting to fetch resource.",
+	"Login: User required to be logged in",
+];
+
 const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 	const { track, colors, loading, message } = useLastfmViewer({
 		api_key,
@@ -58,8 +63,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 			>
 				{track instanceof Error ? (
 					<div>
-						{track.message ==
-						"NetworkError when attempting to fetch resource." ? (
+						{unexpectedErrors.includes(message) ? (
 							""
 						) : (
 							<h1>
@@ -69,6 +73,9 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 						)}
 
 						<div className="text-red-200 text-xl p-5 bg-red-900 rounded-lg w-11/12 mx-auto my-4 shadow-inner">
+							<span className="p-2 text-white mr-2 bg-black/10 rounded-lg">
+								Error
+							</span>
 							{message}
 						</div>
 					</div>
