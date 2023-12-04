@@ -13,13 +13,14 @@ import { prominent } from "color.js";
 
 import disc from "./disc.svg";
 import "../index.css";
+import { useLastfmViewer } from "./useLastfmViewer";
 
 export interface Colors {
 	primary: string | undefined;
 	secondary: string | undefined;
 	accent: string | undefined;
 }
-interface Props {
+export interface Props {
 	api_key: string;
 	user: string;
 	updateInterval?: number;
@@ -43,55 +44,11 @@ export const lfmContext = createContext<{
 });
 
 const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
-	const [track, setTrack] = useState<TrackInfo | Error>();
-	const [colors, setColors] = useState<Colors | undefined>();
-	const [loading, setLoading] = useState(true);
-	const [message, setMessage] = useState("");
-
-	useEffect(() => {
-		const get = async () => {
-			const data: TrackInfo | Error = await getLatestTrack(user, api_key);
-			if (data instanceof Error) {
-				setTrack(data);
-				setMessage(data.message.replace("lastfm-ts-api: ", ""));
-				setLoading(false);
-			} else {
-				setTrack(data);
-				setLoading(false);
-			}
-		};
-		get();
-		let intervalRef: number;
-		if (updateInterval) {
-			intervalRef = setInterval(() => {
-				get();
-			}, updateInterval);
-		}
-		return () => {
-			if (updateInterval) clearInterval(intervalRef);
-		};
-	}, []);
-	useEffect(() => {
-		if (!(track instanceof Error)) {
-			if (track && track.MBImages) {
-				const imageUrl: string = track.MBImages[0].image;
-				prominent(imageUrl, {
-					amount: 100,
-					format: "hex",
-					sample: 100,
-				}).then((color) => {
-					const color1: string = color[0] as string;
-					const color2: string = color[98] as string;
-					const color3: string = color[51] as string;
-					setColors({
-						primary: color1,
-						secondary: color2,
-						accent: color3,
-					});
-				});
-			}
-		}
-	}, [track]);
+	const { track, colors, loading, message } = useLastfmViewer({
+		api_key,
+		user,
+		updateInterval,
+	});
 
 	return (
 		<lfmContext.Provider value={{ colors: colors, track: track }}>
