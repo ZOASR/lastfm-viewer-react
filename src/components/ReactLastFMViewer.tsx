@@ -5,7 +5,7 @@ import TrackProgressBar from "./TrackProgressBar/TrackProgressBar";
 import PastTracks from "./PastTracks/PastTracks";
 
 import { MdOutlinePerson3 } from "react-icons/md";
-import { FaLastfmSquare } from "react-icons/fa";
+import { FaLastfmSquare, FaRegUser } from "react-icons/fa";
 import { FaCompactDisc } from "react-icons/fa";
 import { SiMusicbrainz } from "react-icons/si";
 
@@ -123,7 +123,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 							</h1>
 							<div
 								style={{ color: colors?.secondary }}
-								className="text-xs"
+								className="text-xs flex flex-col gap-2"
 							>
 								{loading ? (
 									<div className="flex justify-center">
@@ -173,10 +173,11 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 									</a>
 								</span>
 								<a
-									className=" text-xs"
+									className=" text-xs flex gap-2 items-center"
 									href={`https://www.last.fm/user/${user}`}
 								>
-									user: {user}
+									<FaRegUser />
+									{user}
 								</a>
 							</div>
 						</div>
