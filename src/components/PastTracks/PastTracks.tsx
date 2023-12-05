@@ -28,62 +28,59 @@ const PastTracks = () => {
 				>
 					Past tracks
 				</div>
-				<ol>
-					{context.track instanceof Error
-						? ""
-						: context.track?.pastTracks
-						? cloneArray(context.track?.pastTracks)
-								.splice(1, context.track?.pastTracks.length)
-								.map((track_) => {
-									return (
-										<li
-											key={track_.date["#text"]}
-											className={styles.varText}
-										>
-											<div className="divider m-0.5 h-min"></div>
-											<div className="flex gap-1 justify-around items-center">
-												<a
-													href={track_.url}
-													target="_blank"
-													className="hover:underline transition-all duration-150"
-												>
-													<span
-														className="flex items-center rounded-lg font-black"
-														style={{
-															color: context
-																.colors
-																?.secondary,
-														}}
-													>
-														{track_.name}
-													</span>
-												</a>
+				{context.track instanceof Error
+					? ""
+					: context.track?.pastTracks
+					? cloneArray(context.track?.pastTracks)
+							.splice(1, context.track?.pastTracks.length)
+							.map((track_) => {
+								return (
+									<div
+										key={track_.date["#text"] + track_.name}
+										className={styles.varText}
+									>
+										<div className="divider m-0.5 h-min"></div>
+										<div className="flex gap-1 justify-around items-center">
+											<a
+												href={track_.url}
+												target="_blank"
+												className="hover:underline transition-all duration-150 grow shrink-0 basis-1/3"
+											>
 												<span
-													className="flex items-center sm:flex-row flex-col rounded-lg"
+													className="flex items-center rounded-lg font-black"
 													style={{
 														color: context.colors
 															?.secondary,
 													}}
 												>
-													<MdOutlinePerson3 />
-													{track_.artist["#text"]}
+													{track_.name}
 												</span>
-												<span
-													className="flex sm:flex-row flex-col items-center rounded-lg "
-													style={{
-														color: context.colors
-															?.secondary,
-													}}
-												>
-													<CiCalendarDate />
-													{track_.date["#text"]}
-												</span>
-											</div>
-										</li>
-									);
-								})
-						: ""}
-				</ol>
+											</a>
+											<span
+												className="flex items-center sm:flex-row flex-col rounded-lg grow shrink-0 basis-1/3"
+												style={{
+													color: context.colors
+														?.secondary,
+												}}
+											>
+												<MdOutlinePerson3 />
+												{track_.artist["#text"]}
+											</span>
+											<span
+												className="flex sm:flex-row flex-col items-center rounded-lg "
+												style={{
+													color: context.colors
+														?.secondary,
+												}}
+											>
+												<CiCalendarDate />
+												{track_.date["#text"]}
+											</span>
+										</div>
+									</div>
+								);
+							})
+					: ""}
 			</div>
 		</>
 	);
