@@ -24,6 +24,7 @@ const PastTracks = () => {
 					className="divider w-1/2 sm:text-sm text-xs mx-auto mb-0 mt-0.5 rounded-lg p-2"
 					style={{
 						color: context.colors?.secondary,
+						background: context.colors?.accent + "22",
 					}}
 				>
 					Past tracks
