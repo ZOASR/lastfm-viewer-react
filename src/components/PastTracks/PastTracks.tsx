@@ -53,7 +53,12 @@ const PastTracks = () => {
 															?.secondary,
 													}}
 												>
-													{track_.name}
+													{track_.name.length > 20
+														? track_.name.substring(
+																0,
+																20
+														  ) + "..."
+														: track_.name}
 												</span>
 											</a>
 											<span
