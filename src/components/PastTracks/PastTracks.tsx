@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { lfmContext } from "../ReactLastFMViewer";
-import { MdOutlinePerson3 } from "react-icons/md";
-import { CiCalendarDate } from "react-icons/ci";
+import { FaRegUser, FaCalendar } from "react-icons/fa";
 import styles from "./PastTracks.module.css";
 
 const identity: (x: any) => any = (x: any) => x;
@@ -64,7 +63,7 @@ const PastTracks = () => {
 														?.secondary,
 												}}
 											>
-												<MdOutlinePerson3 />
+												<FaRegUser />
 												{track_.artist["#text"]}
 											</span>
 											<span
@@ -74,7 +73,7 @@ const PastTracks = () => {
 														?.secondary,
 												}}
 											>
-												<CiCalendarDate />
+												<FaCalendar />
 												{track_.date["#text"]}
 											</span>
 										</div>
