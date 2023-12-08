@@ -58,7 +58,7 @@ const PastTracks = () => {
 												</span>
 											</a>
 											<span
-												className="flex items-center sm:flex-row flex-col rounded-lg grow shrink-0 basis-1/3"
+												className="flex items-center sm:flex-row flex-col rounded-lg grow shrink-0 basis-1/3 p-2"
 												style={{
 													color: context.colors
 														?.secondary,
@@ -68,7 +68,7 @@ const PastTracks = () => {
 												{track_.artist["#text"]}
 											</span>
 											<span
-												className="flex sm:flex-row flex-col items-center rounded-lg "
+												className="flex sm:flex-row flex-col items-center rounded-lg p-2"
 												style={{
 													color: context.colors
 														?.secondary,
