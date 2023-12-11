@@ -1,3 +1,17 @@
-.varText {
-	font-size: clamp(0.1em, 2vw, 0.7em);
+.scrollable::-webkit-scrollbar {
+	width: 1px;
+	height: 2px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+	background: transparent;
+	width: 1px;
+	height: 2px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 1px;
+	height: 2px;
+	border-radius: 5px;
 }

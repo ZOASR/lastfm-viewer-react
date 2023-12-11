@@ -37,32 +37,28 @@ const PastTracks = () => {
 								return (
 									<div
 										key={track_.date["#text"] + track_.name}
-										className={styles.varText}
+										className="sm:text-[75%]  text-[50%]"
 									>
 										<div className="divider m-0.5 h-min"></div>
-										<div className="flex gap-1 justify-around items-center">
+										<div
+											className={
+												"flex gap-1 justify-between items-center gap-4 overflow-x-scroll whitespace-nowrap width-full " +
+												styles.scrollable
+											}
+										>
 											<a
 												href={track_.url}
 												target="_blank"
-												className="hover:underline transition-all duration-150 flex-1"
+												className="hover:underline transition-all duration-150 flex-1 font-black text-ellipsis"
+												style={{
+													color: context.colors
+														?.secondary,
+												}}
 											>
-												<span
-													className="flex items-center rounded-lg font-black"
-													style={{
-														color: context.colors
-															?.secondary,
-													}}
-												>
-													{track_.name.length > 20
-														? track_.name.substring(
-																0,
-																20
-														  ) + "..."
-														: track_.name}
-												</span>
+												{track_.name}
 											</a>
 											<span
-												className="flex items-center sm:flex-row flex-col rounded-lg flex-1 p-2"
+												className="flex items-center sm:flex-row flex-col flex-1 "
 												style={{
 													color: context.colors
 														?.secondary,
@@ -72,7 +68,7 @@ const PastTracks = () => {
 												{track_.artist["#text"]}
 											</span>
 											<span
-												className="flex sm:flex-row flex-col items-center rounded-lg p-2"
+												className="flex sm:flex-row flex-col items-center "
 												style={{
 													color: context.colors
 														?.secondary,
