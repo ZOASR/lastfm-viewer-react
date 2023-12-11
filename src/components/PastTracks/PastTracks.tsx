@@ -44,7 +44,7 @@ const PastTracks = () => {
 											<a
 												href={track_.url}
 												target="_blank"
-												className="hover:underline transition-all duration-150 grow shrink-0 basis-1/3"
+												className="hover:underline transition-all duration-150 flex-1"
 											>
 												<span
 													className="flex items-center rounded-lg font-black"
@@ -62,7 +62,7 @@ const PastTracks = () => {
 												</span>
 											</a>
 											<span
-												className="flex items-center sm:flex-row flex-col rounded-lg grow shrink-0 basis-1/3 p-2"
+												className="flex items-center sm:flex-row flex-col rounded-lg flex-1 p-2"
 												style={{
 													color: context.colors
 														?.secondary,
