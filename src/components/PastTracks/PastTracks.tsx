@@ -42,14 +42,14 @@ const PastTracks = () => {
 										<div className="divider m-0.5 h-min"></div>
 										<div
 											className={
-												"flex gap-1 justify-between items-center gap-4 overflow-x-scroll whitespace-nowrap width-full " +
+												"flex justify-between items-center gap-4 overflow-x-scroll whitespace-nowrap width-full " +
 												styles.scrollable
 											}
 										>
 											<a
 												href={track_.url}
 												target="_blank"
-												className="hover:underline transition-all duration-150 flex-1 font-black text-ellipsis"
+												className="hover:underline text-start transition-all duration-150 flex-1 font-black text-ellipsis"
 												style={{
 													color: context.colors
 														?.secondary,
