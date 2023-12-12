@@ -70,7 +70,7 @@ export const getLatestTrack = async (
 	const user = new LastFMUser(api_key);
 	const track = new LastFMTrack(api_key);
 	const opt = {
-		user: username, //optional
+		user: username,
 		limit: 5, //optional, default is 50
 	};
 	let userData;
