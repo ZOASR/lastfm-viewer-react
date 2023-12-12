@@ -26,4 +26,7 @@ export default defineConfig({
 		emptyOutDir: true,
 	},
 	plugins: [react(), libInjectCss(), nodePolyfills(), dts()],
+	define: {
+		APP_VERSION: JSON.stringify(process.env.npm_package_version),
+	},
 });

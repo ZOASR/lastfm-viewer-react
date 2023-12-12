@@ -29,7 +29,7 @@ const getMBTrackReleases = async (
 	}
 	const musicbrainzApi = await fetch(brainzUrl, {
 		headers: {
-			"User-Agent": "ReactLastFmViewer/1.2.0 ",
+			"User-Agent": `ReactLastFmViewer/${APP_VERSION} `,
 		},
 	});
 	const brainzData: MBObject = await musicbrainzApi.json();
@@ -41,7 +41,7 @@ const getMBReleaseInfo = async (mbid: string): Promise<ReleaseInfo> => {
 	const brainzUrl = `https://musicbrainz.org/ws/2/release/${mbid}?fmt=json`;
 	const musicbrainzApi = await fetch(brainzUrl, {
 		headers: {
-			"User-Agent": "ReactLastFmViewer/1.2.0 ",
+			"User-Agent": `ReactLastFmViewer/${APP_VERSION} `,
 		},
 	});
 	const releaseInfo: ReleaseInfo = await musicbrainzApi.json();
