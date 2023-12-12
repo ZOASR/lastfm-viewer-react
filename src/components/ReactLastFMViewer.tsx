@@ -42,6 +42,7 @@ export const lfmContext = createContext<{
 const unexpectedErrors = [
 	"NetworkError when attempting to fetch resource.",
 	"Login: User required to be logged in",
+	"Failed to fetch",
 ];
 
 const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
