@@ -4,5 +4,5 @@
 	padding: 2rem;
 	text-align: center;
 	height: 50%;
-	width: 50%;
+	min-width: 50%;
 }
