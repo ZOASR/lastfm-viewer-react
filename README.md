@@ -13,10 +13,10 @@ A React component to view recent [scrobbles](https://www.dictionary.com/browse/s
 -   `lastfm-ts-api`
 -   `color.js`
 
-<div style="display: flex; gap: 1em; margin: 1em 0;">
+<p align="center">
   <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_1.png" style="border-radius: 10px"/>
   <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
-</div>
+</p>
 
 ## Features:
 
