@@ -1,6 +1,10 @@
 # react-lastfm-viewer
 
-![npm](https://img.shields.io/npm/dt/react-lastfm-viewer?style=for-the-badge&logo=npm&logoColor=red&label=react-lastfm-viewer&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Freact-lastfm-viewer)
+<p align="center">
+    <a href="https://www.npmjs.com/package/react-lastfm-viewer" alt="react-lastfm-viewer(npm)">
+        <img src="https://img.shields.io/npm/dt/react-lastfm-viewer?style=for-the-badge&logo=npm&logoColor=red&label=react-lastfm-viewer
+" /></a>
+</p>
 
 A React component to view recent [scrobbles](https://www.dictionary.com/browse/scrobble) for a provided [last.fm](last.fm) user, built with:
 
