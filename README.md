@@ -1,5 +1,7 @@
 # react-lastfm-viewer
 
+![npm](https://img.shields.io/npm/dt/react-lastfm-viewer?style=for-the-badge&logo=npm&logoColor=red&label=react-lastfm-viewer&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Freact-lastfm-viewer)
+
 A React component to view recent [scrobbles](https://www.dictionary.com/browse/scrobble) for a provided [last.fm](last.fm) user, built with:
 
 -   `tailwind`, `daisyui`
