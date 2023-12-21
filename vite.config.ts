@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import dts from "vite-plugin-dts";
@@ -25,7 +24,7 @@ export default defineConfig({
 		sourcemap: true,
 		emptyOutDir: true,
 	},
-	plugins: [react(), libInjectCss(), nodePolyfills(), dts()],
+	plugins: [react(), libInjectCss(), dts()],
 	define: {
 		APP_VERSION: JSON.stringify(process.env.npm_package_version),
 	},
