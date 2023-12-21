@@ -1,6 +1,12 @@
-import { LastFMTrack, LastFMUser } from "lastfm-ts-api";
 import { Image, Images, MBObject, Release, ReleaseInfo } from "./MBtypes";
-import { LastFmImage, Track } from "./LFMtypes";
+import {
+	LastFmImage,
+	Track,
+	TrackInfoRes,
+	UserRecentTracksRes,
+} from "./LFMtypes";
+
+const lastfm_api_root = "http://ws.audioscrobbler.com/2.0/";
 
 export interface TrackInfo {
 	trackName: string | undefined;
@@ -55,6 +61,52 @@ const getCAACoverArt = async (releaseMBid: string): Promise<Image[]> => {
 	return covers.images;
 };
 
+const getUserTracks = async (
+	username: string,
+	api_key: string,
+	limit: number = 5
+): Promise<UserRecentTracksRes> => {
+	const lastfm_api_url = `${lastfm_api_root}?method=user.getrecenttracks&user=${username}&api_key=${api_key}&format=json&limit=${limit}`;
+
+	const res = await fetch(lastfm_api_url, {
+		method: "GET",
+		headers: {
+			"User-Agent": `ReactLastFmViewer/${APP_VERSION} `,
+		},
+	});
+	if (res.ok) {
+		const data: UserRecentTracksRes = await res.json();
+		console.log(data);
+		return data;
+	} else {
+		const error: { message: string; error: number } = await res.json();
+		throw new Error(error.message);
+	}
+};
+
+const getTrackInfo = async (
+	track_name: string,
+	track_artist: string,
+	api_key: string
+): Promise<TrackInfoRes> => {
+	const lastfm_api_url = `${lastfm_api_root}?method=track.getInfo&track=${track_name}&artist=${track_artist}&api_key=${api_key}&format=json`;
+
+	const res = await fetch(lastfm_api_url, {
+		method: "GET",
+		headers: {
+			"User-Agent": `ReactLastFmViewer/${APP_VERSION} `,
+		},
+	});
+	if (res.ok) {
+		const data: TrackInfoRes = await res.json();
+		console.log(data);
+		return data;
+	} else {
+		const error: { message: string; error: number } = await res.json();
+		throw new Error(error.message);
+	}
+};
+
 export const getLatestTrack = async (
 	username: string,
 	api_key: string
@@ -67,17 +119,12 @@ export const getLatestTrack = async (
 	let duration: number = 0;
 	let pasttracks;
 
-	const user = new LastFMUser(api_key);
-	const track = new LastFMTrack(api_key);
-	const opt = {
-		user: username,
-		limit: 5, //optional, default is 50
-	};
-	let userData;
-	let trackInfo;
+	let userData: UserRecentTracksRes;
+	let trackInfo: TrackInfoRes;
 
 	try {
-		userData = await user.getRecentTracks(opt);
+		userData = await getUserTracks(username, api_key, 5);
+		// userData = await user.getRecentTracks(opt);
 
 		trackName = userData.recenttracks.track[0].name;
 		artistName = userData.recenttracks.track[0].artist["#text"];
@@ -94,10 +141,7 @@ export const getLatestTrack = async (
 	}
 
 	try {
-		trackInfo = await track.getInfo({
-			track: trackName,
-			artist: artistName,
-		});
+		trackInfo = await getTrackInfo(trackName, artistName, api_key);
 		albumTitle = trackInfo.track.album?.title;
 		lastfmImages = trackInfo.track.album?.image;
 		duration = parseInt(trackInfo.track.duration);
