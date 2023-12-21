@@ -26,7 +26,7 @@ export const useLastfmViewer: ({}: Props) => lfmvHook = ({
 			const data: TrackInfo | Error = await getLatestTrack(user, api_key);
 			if (data instanceof Error) {
 				setTrack(data);
-				setMessage(data.message.replace("lastfm-ts-api: ", ""));
+				setMessage(data.message);
 				setLoading(false);
 			} else {
 				setTrack(data);

@@ -1,5 +1,3 @@
-import { LastFMBooleanNumber } from "lastfm-ts-api/dist/types";
-
 export type UserRecentTracksReq = {
 	user: string;
 	limit?: number;
@@ -82,31 +80,29 @@ export type Attr = {
 };
 
 export type Track = {
-	track: Array<{
-		artist: {
-			mbid: string;
-			"#text": string;
-		};
-		streamable: LastFMBooleanNumber;
-		image: Array<{
-			"#text": string;
-			size: string;
-		}>;
+	artist: {
 		mbid: string;
-		album: {
-			mbid: string;
-			"#text": string;
-		};
-		name: string;
-		url: string;
-		date: {
-			uts: string;
-			"#text": string;
-		};
-		"@attr"?: {
-			nowplaying: "true";
-		};
+		"#text": string;
+	};
+	streamable: "0" | "1";
+	image: Array<{
+		"#text": string;
+		size: string;
 	}>;
+	mbid: string;
+	album: {
+		mbid: string;
+		"#text": string;
+	};
+	name: string;
+	url: string;
+	date: {
+		uts: string;
+		"#text": string;
+	};
+	"@attr"?: {
+		nowplaying: "true";
+	};
 };
 
 export type Album = {
