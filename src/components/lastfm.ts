@@ -76,7 +76,6 @@ const getUserTracks = async (
 	});
 	if (res.ok) {
 		const data: UserRecentTracksRes = await res.json();
-		console.log(data);
 		return data;
 	} else {
 		const error: { message: string; error: number } = await res.json();
@@ -99,7 +98,6 @@ const getTrackInfo = async (
 	});
 	if (res.ok) {
 		const data: TrackInfoRes = await res.json();
-		console.log(data);
 		return data;
 	} else {
 		const error: { message: string; error: number } = await res.json();
