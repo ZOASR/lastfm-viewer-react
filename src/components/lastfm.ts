@@ -122,7 +122,6 @@ export const getLatestTrack = async (
 
 	try {
 		userData = await getUserTracks(username, api_key, 5);
-		// userData = await user.getRecentTracks(opt);
 
 		trackName = userData.recenttracks.track[0].name;
 		artistName = userData.recenttracks.track[0].artist["#text"];
