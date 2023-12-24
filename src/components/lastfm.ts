@@ -137,56 +137,68 @@ export const getLatestTrack = async (
 		}
 	}
 
+	let LatestTrack: TrackInfo = {
+		trackName: undefined,
+		artistName: undefined,
+		albumTitle: undefined,
+		lastfmImages: undefined,
+		MBImages: undefined,
+		nowplaying: false,
+		pastTracks: [] as unknown[],
+		duration: 0,
+	};
+
 	try {
 		trackInfo = await getTrackInfo(trackName, artistName, api_key);
 		albumTitle = trackInfo.track.album?.title;
 		lastfmImages = trackInfo.track.album?.image;
 		duration = parseInt(trackInfo.track.duration);
+		LatestTrack = {
+			trackName: trackName,
+			artistName: artistName,
+			albumTitle: albumTitle,
+			lastfmImages: lastfmImages,
+			MBImages: undefined,
+			nowplaying: isNowplaying,
+			pastTracks: pasttracks as unknown[],
+			duration: duration,
+		};
 	} catch (error) {
 		if (error instanceof Error) {
-			return error;
+			console.error(error);
 		}
-	}
 
-	const releases: Release[] | null = await getMBTrackReleases(
-		trackName,
-		artistName,
-		albumTitle
-	);
+		const releases: Release[] | null = await getMBTrackReleases(
+			trackName,
+			artistName,
+			albumTitle
+		);
 
-	let LatestTrack: TrackInfo = {
-		trackName: trackName,
-		artistName: artistName,
-		albumTitle: albumTitle,
-		lastfmImages: lastfmImages,
-		MBImages: undefined,
-		nowplaying: isNowplaying,
-		pastTracks: pasttracks as unknown[],
-		duration: duration,
-	};
-
-	if (releases) {
-		for (let release of releases) {
-			const rleaseInfo: ReleaseInfo = await getMBReleaseInfo(release.id);
-			if (
-				rleaseInfo["cover-art-archive"].front ||
-				rleaseInfo["cover-art-archive"].artwork ||
-				rleaseInfo["cover-art-archive"].back
-			) {
-				const images: Image[] = await getCAACoverArt(release.id);
-				LatestTrack = {
-					trackName: trackName,
-					artistName: artistName,
-					albumTitle: albumTitle,
-					lastfmImages: lastfmImages,
-					MBImages: images,
-					nowplaying: isNowplaying,
-					pastTracks: pasttracks as unknown[],
-					duration: duration,
-				};
-				return LatestTrack;
+		if (releases) {
+			for (let release of releases) {
+				const rleaseInfo: ReleaseInfo = await getMBReleaseInfo(
+					release.id
+				);
+				if (
+					rleaseInfo["cover-art-archive"].front ||
+					rleaseInfo["cover-art-archive"].artwork ||
+					rleaseInfo["cover-art-archive"].back
+				) {
+					const images: Image[] = await getCAACoverArt(release.id);
+					LatestTrack = {
+						trackName: trackName,
+						artistName: artistName,
+						albumTitle: albumTitle,
+						lastfmImages: lastfmImages,
+						MBImages: images,
+						nowplaying: isNowplaying,
+						pastTracks: pasttracks as unknown[],
+						duration: duration,
+					};
+					return LatestTrack;
+				}
+				await wait(1000);
 			}
-			await wait(1000);
 		}
 	}
 	return LatestTrack;
