@@ -1,7 +1,7 @@
 {
   "name": "react-lastfm-viewer",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A React component to view recent scrobbles for a last.fm user",
   "keywords": [
     "lastfm",
