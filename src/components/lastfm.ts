@@ -96,8 +96,11 @@ const getTrackInfo = async (
 			"User-Agent": `ReactLastFmViewer/${APP_VERSION} `,
 		},
 	});
+	const data: TrackInfoRes = await res.json();
 	if (res.ok) {
-		const data: TrackInfoRes = await res.json();
+		if (!data.track.album) {
+			throw new Error("No lastfm album for this track");
+		}
 		return data;
 	} else {
 		const error: { message: string; error: number } = await res.json();
