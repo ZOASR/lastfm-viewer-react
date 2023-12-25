@@ -45,24 +45,27 @@ export const useLastfmViewer: ({}: Props) => lfmvHook = ({
 	}, []);
 
 	useEffect(() => {
+		let imageUrl: string = "";
 		if (!(track instanceof Error)) {
-			if (track && track.MBImages) {
-				const imageUrl: string = track.MBImages[0].image;
-				prominent(imageUrl, {
-					amount: 100,
-					format: "hex",
-					sample: 100,
-				}).then((color) => {
-					const color1: string = color[0] as string;
-					const color2: string = color[98] as string;
-					const color3: string = color[51] as string;
-					setColors({
-						primary: color1,
-						secondary: color2,
-						accent: color3,
-					});
-				});
+			if (track && track.lastfmImages) {
+				imageUrl = track?.lastfmImages[3]["#text"];
+			} else if (track && track.MBImages) {
+				imageUrl = track.MBImages[0].image;
 			}
+			prominent(imageUrl, {
+				amount: 100,
+				format: "hex",
+				sample: 100,
+			}).then((color) => {
+				const color1: string = color[0] as string;
+				const color2: string = color[98] as string;
+				const color3: string = color[51] as string;
+				setColors({
+					primary: color1,
+					secondary: color2,
+					accent: color3,
+				});
+			});
 		}
 	}, [track]);
 
