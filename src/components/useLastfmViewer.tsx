@@ -55,7 +55,7 @@ export const useLastfmViewer: ({}: Props) => lfmvHook = ({
 			prominent(imageUrl, {
 				amount: 100,
 				format: "hex",
-				sample: 100
+				sample: 10
 			}).then((color) => {
 				const color1: string = color[0] as string;
 				const color2: string = color[98] as string;
