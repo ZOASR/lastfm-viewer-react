@@ -39,7 +39,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "npm run build",
-    "update": "npm i --legacy-peer-deps && git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && npm publish"
+    "update": "npm i --legacy-peer-deps && git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && && git push origin && git-cliff > CHANGELOG.md && npm publish"
   },
   "dependencies": {
     "react": "^18.2.0",
