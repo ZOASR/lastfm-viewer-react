@@ -13,14 +13,14 @@ const PastTracks = () => {
 	return (
 		<>
 			<div
-				className="mb-4 rounded-lg sm:p-4 p-0.5"
+				className="mb-4 rounded-lg p-0.5 sm:p-4"
 				style={{
 					color: context.colors?.secondary,
 					background: context.colors?.accent + "22",
 				}}
 			>
 				<div
-					className="divider w-1/2 sm:text-sm text-xs mx-auto mb-0 mt-0.5 rounded-lg p-4"
+					className="divider mx-auto mb-0 mt-0.5 w-1/2 rounded-lg p-4 text-xs sm:text-sm"
 					style={{
 						color: context.colors?.secondary,
 						background: context.colors?.accent + "22",
@@ -31,57 +31,60 @@ const PastTracks = () => {
 				{context.track instanceof Error
 					? ""
 					: context.track?.pastTracks
-					? cloneArray(context.track?.pastTracks)
-							.splice(1, context.track?.pastTracks.length)
-							.map((track_) => {
-								return (
-									<div
-										key={track_.date["#text"] + track_.name}
-										className="sm:text-[75%]  text-[50%]"
-									>
-										<div className="divider m-0.5 h-min"></div>
+						? cloneArray(context.track?.pastTracks)
+								.splice(1, context.track?.pastTracks.length)
+								.map((track_) => {
+									return (
 										<div
-											className={
-												"flex justify-between items-center gap-4 overflow-x-scroll whitespace-nowrap width-full " +
-												styles.scrollable
+											key={
+												track_.date["#text"] +
+												track_.name
 											}
+											className="text-[50%]  sm:text-[75%]"
 										>
-											<a
-												href={track_.url}
-												target="_blank"
-												className="hover:underline text-start transition-all duration-150 flex-1 font-black text-ellipsis"
-												style={{
-													color: context.colors
-														?.secondary,
-												}}
+											<div className="divider m-0.5 h-min"></div>
+											<div
+												className={
+													"width-full  flex items-center justify-between gap-4 overflow-x-scroll whitespace-nowrap " +
+													styles.scrollable
+												}
 											>
-												{track_.name}
-											</a>
-											<span
-												className="flex items-center sm:flex-row flex-col flex-1 "
-												style={{
-													color: context.colors
-														?.secondary,
-												}}
-											>
-												<FaRegUser />
-												{track_.artist["#text"]}
-											</span>
-											<span
-												className="flex sm:flex-row flex-col items-center "
-												style={{
-													color: context.colors
-														?.secondary,
-												}}
-											>
-												<FaCalendar />
-												{track_.date["#text"]}
-											</span>
+												<a
+													href={track_.url}
+													target="_blank"
+													className="flex-1 text-ellipsis text-start font-black transition-all duration-150 hover:underline"
+													style={{
+														color: context.colors
+															?.secondary,
+													}}
+												>
+													{track_.name}
+												</a>
+												<span
+													className="flex flex-1 flex-col items-center sm:flex-row "
+													style={{
+														color: context.colors
+															?.secondary,
+													}}
+												>
+													<FaRegUser />
+													{track_.artist["#text"]}
+												</span>
+												<span
+													className="flex flex-col items-center sm:flex-row "
+													style={{
+														color: context.colors
+															?.secondary,
+													}}
+												>
+													<FaCalendar />
+													{track_.date["#text"]}
+												</span>
+											</div>
 										</div>
-									</div>
-								);
-							})
-					: ""}
+									);
+								})
+						: ""}
 			</div>
 		</>
 	);

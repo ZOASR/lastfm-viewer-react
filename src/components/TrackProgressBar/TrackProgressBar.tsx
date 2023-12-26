@@ -15,7 +15,7 @@ const TrackProgressBar = () => {
 	const context = useContext(lfmContext);
 	return (
 		<>
-			<div className="w-full flex justify-center items-center my-0.5">
+			<div className="my-0.5 flex w-full items-center justify-center">
 				<span className={styles.nowplaying}> Now Playing</span>
 				<div className={styles.icon}>
 					<span
@@ -49,20 +49,20 @@ const TrackProgressBar = () => {
 						context.track instanceof Error
 							? 0
 							: context.track
-							? context.track?.duration / 1000
-							: 0
+								? context.track?.duration / 1000
+								: 0
 					}
 				></progress>
 				<span className="text-xs">
 					{context.track instanceof Error
 						? " "
 						: context.track
-						? context.track.duration > 0
-							? `${msToMins(context.track?.duration)}:${msToSecs(
-									context.track?.duration
-							  )}`
-							: "--:--"
-						: "--:--"}
+							? context.track.duration > 0
+								? `${msToMins(
+										context.track?.duration,
+									)}:${msToSecs(context.track?.duration)}`
+								: "--:--"
+							: "--:--"}
 				</span>
 			</div>
 		</>

@@ -55,7 +55,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 	return (
 		<lfmContext.Provider value={{ colors: colors, track: track }}>
 			<div
-				className="flex  flex-col w-full h-full glass mx-auto shadow-xl relative ring-2 rounded-lg ring-slate-950/5 p-4"
+				className="glass  relative mx-auto flex h-full w-full flex-col rounded-lg p-4 shadow-xl ring-2 ring-slate-950/5"
 				style={{ background: colors?.primary }}
 			>
 				{track instanceof Error ? (
@@ -69,8 +69,8 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 							</h1>
 						)}
 
-						<div className="text-red-200 text-xl p-5 bg-red-900 rounded-lg w-11/12 mx-auto my-4 shadow-inner">
-							<span className="p-2 text-white mr-2 bg-black/10 rounded-lg">
+						<div className="mx-auto my-4 w-11/12 rounded-lg bg-red-900 p-5 text-xl text-red-200 shadow-inner">
+							<span className="mr-2 rounded-lg bg-black/10 p-2 text-white">
 								Error
 							</span>
 							{message}
@@ -79,7 +79,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 				) : (
 					<>
 						<figure
-							className="h-auto mx-auto overflow-hidden border-inherit mb-2 rounded-lg"
+							className="mx-auto mb-2 h-auto overflow-hidden rounded-lg border-inherit"
 							style={{
 								boxShadow: `0 0 20px ${colors?.secondary}99`,
 							}}
@@ -87,13 +87,13 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 							{track?.lastfmImages &&
 							track?.lastfmImages[3]["#text"] ? (
 								<img
-									className="object-cover w-min overflow-hidden"
+									className="w-min overflow-hidden object-cover"
 									src={track.lastfmImages[3]["#text"]}
 									alt="Album Cover"
 								/>
 							) : track?.MBImages ? (
 								<img
-									className="object-cover w-min overflow-hidden"
+									className="w-min overflow-hidden object-cover"
 									src={track.MBImages[0].image}
 									alt="Album Cover"
 								/>
@@ -106,10 +106,10 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 							)}
 						</figure>
 
-						<div className="flex flex-col gap-1 filter drop-shadow-lg h-min">
+						<div className="flex h-min flex-col gap-1 drop-shadow-lg filter">
 							{track?.nowplaying ? <TrackProgressBar /> : ""}
 							<h1
-								className="sm:text-base text-xs shadow:lg text-center mx-auto mt-1 font-bold"
+								className="shadow:lg mx-auto mt-1 text-center text-xs font-bold sm:text-base"
 								style={{ color: colors?.secondary }}
 							>
 								{loading ? (
@@ -122,7 +122,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 							</h1>
 							<div
 								style={{ color: colors?.secondary }}
-								className="text-xs flex flex-col gap-2"
+								className="flex flex-col gap-2 text-xs"
 							>
 								{loading ? (
 									<div className="flex justify-center">
@@ -130,7 +130,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 										<div className="skeleton h-4 w-1/2"></div>
 									</div>
 								) : track?.artistName ? (
-									<span className="flex justify-center items-center gap-1">
+									<span className="flex items-center justify-center gap-1">
 										<FaRegUser />
 										{track?.artistName}
 									</span>
@@ -143,7 +143,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 										<div className="skeleton h-4 w-1/2"></div>
 									</div>
 								) : track?.albumTitle ? (
-									<span className="flex justify-center items-center gap-1">
+									<span className="flex items-center justify-center gap-1">
 										<FaCompactDisc />
 										{track?.albumTitle}
 									</span>
@@ -154,7 +154,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 							<PastTracks />
 							<div
 								style={{ color: colors?.secondary }}
-								className="flex w-full  mt-2 filter drop-shadow-lg justify-between"
+								className="mt-2 flex  w-full justify-between drop-shadow-lg filter"
 							>
 								<span className="flex gap-2">
 									<a
@@ -172,7 +172,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 									</a>
 								</span>
 								<a
-									className=" text-xs flex gap-2 items-center"
+									className=" flex items-center gap-2 text-xs"
 									href={`https://www.last.fm/user/${user}`}
 								>
 									<FaRegUser />
