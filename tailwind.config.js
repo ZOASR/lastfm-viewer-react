@@ -8,4 +8,7 @@ export default {
 		},
 	},
 	plugins: [require("daisyui")],
+	corePlugins: {
+		preflight: false,
+	},
 };
