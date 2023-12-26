@@ -10,6 +10,7 @@ import { FaRegUser, FaCompactDisc } from "react-icons/fa";
 
 import disc from "./disc.svg";
 import "../index.css";
+import styles from "./ReactLastFMViewer.module.css";
 import { useLastfmViewer } from "./useLastfmViewer";
 import LoadingSkeleton from "./LoadingSkeleton/LoadingSkeleton";
 
@@ -51,7 +52,10 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 	return (
 		<lfmContext.Provider value={{ colors: colors, track: track }}>
 			<div
-				className="glass  relative mx-auto flex h-full w-full flex-col rounded-lg p-4 shadow-xl ring-2 ring-slate-950/5"
+				className={
+					styles.lfmvCard +
+					" glass relative mx-auto flex h-full w-full flex-col rounded-lg p-4 shadow-xl ring-2 ring-slate-950/5"
+				}
 				style={{ background: colors?.primary }}
 			>
 				{track instanceof Error ? (
@@ -67,13 +71,13 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 							{track?.lastfmImages &&
 							track?.lastfmImages[3]["#text"] ? (
 								<img
-									className="w-min overflow-hidden object-cover"
+									className="block h-full w-full overflow-hidden object-cover align-middle"
 									src={track.lastfmImages[3]["#text"]}
 									alt="Album Cover"
 								/>
 							) : track?.MBImages ? (
 								<img
-									className="w-min overflow-hidden object-cover"
+									className="block h-full w-full overflow-hidden object-cover align-middle"
 									src={track.MBImages[0].image}
 									alt="Album Cover"
 								/>

@@ -16,14 +16,14 @@ const PastTracks = () => {
 				className="mb-4 rounded-lg p-0.5 sm:p-4"
 				style={{
 					color: context.colors?.secondary,
-					background: context.colors?.accent + "22",
+					background: context.colors?.accent + "22"
 				}}
 			>
 				<div
-					className="divider mx-auto mb-0 mt-0.5 w-1/2 rounded-lg p-4 text-xs sm:text-sm"
+					className="divider mx-auto mb-0 mt-0.5 w-1/2 rounded-lg p-2 text-xs sm:text-sm"
 					style={{
 						color: context.colors?.secondary,
-						background: context.colors?.accent + "22",
+						background: context.colors?.accent + "22"
 					}}
 				>
 					Past tracks
@@ -55,7 +55,7 @@ const PastTracks = () => {
 													className="flex-1 text-ellipsis text-start font-black transition-all duration-150 hover:underline"
 													style={{
 														color: context.colors
-															?.secondary,
+															?.secondary
 													}}
 												>
 													{track_.name}
@@ -64,7 +64,7 @@ const PastTracks = () => {
 													className="flex flex-1 flex-col items-center sm:flex-row "
 													style={{
 														color: context.colors
-															?.secondary,
+															?.secondary
 													}}
 												>
 													<FaRegUser />
@@ -74,7 +74,7 @@ const PastTracks = () => {
 													className="flex flex-col items-center sm:flex-row "
 													style={{
 														color: context.colors
-															?.secondary,
+															?.secondary
 													}}
 												>
 													<FaCalendar />

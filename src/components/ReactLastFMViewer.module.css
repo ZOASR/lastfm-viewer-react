@@ -1,3 +1,4 @@
-.varText {
-	font-size: clamp(0.2em, 3vw, 1em);
+.lfmvCard a {
+	color: inherit;
+	text-decoration: inherit;
 }
