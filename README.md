@@ -1,6 +1,10 @@
 # react-lastfm-viewer
 
+> [!NOTE]
+> This repository is now part of a monorepo if you want to start developing on it got to the original monorepo [here](https://github.com/ZOASR/lastfm-viewer)
+
 <p align="center">
+	<a href="https://npm.io/package/react-lastfm-viewer"><img src="https://img.shields.io/badge/maintained%20with-npm-cc00ff.svg?style=for-the-badge&logo=npm" ></a>
     <a href="https://www.npmjs.com/package/react-lastfm-viewer" alt="react-lastfm-viewer(npm)">
         <img src="https://img.shields.io/npm/dt/react-lastfm-viewer?style=for-the-badge&logo=npm&logoColor=red&label=react-lastfm-viewer" /></a>
 </p>
@@ -17,17 +21,19 @@ A React component to view recent [scrobbles](https://www.dictionary.com/browse/s
   <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
 </p>
 
-## Features:
+## Quick start
 
--   color theme adapts to the album cover image
-
-# Install
+Install it:
 
 ```bash
 npm i react-lastfm-viewer
+# or
+yarn add react-lastfm-viewer
+# or
+pnpm add react-lastfm-viewer
 ```
 
-## Usage
+## Use it
 
 to start using the component you first need to get a last.fm API key from [here](https://www.last.fm/api), once you've done that just import the component and specify the username of the user you want to get scrobbling information from:
 
