@@ -1,37 +1,22 @@
-import { ReactNode } from "react";
-import { useLastfmViewer } from "../useLastfmViewer";
+import { ReactNode, useContext } from "react";
+import { lfmContext } from "../ReactLastFMViewer";
 
 interface Props {
 	children: ReactNode;
-	api_key: string;
-	user: string;
-	updateInterval: number | undefined;
-	fallbackMsg: string;
+	fallback: ReactNode | undefined;
+	className?: string;
 }
 
-const LoadingSkeleton = ({
-	children,
-	api_key,
-	user,
-	updateInterval,
-	fallbackMsg
-}: Props) => {
-	const { loading } = useLastfmViewer({
-		api_key,
-		user,
-		updateInterval
-	});
+const LoadingSkeleton = ({ children, fallback, className }: Props) => {
+	const context = useContext(lfmContext);
 	return (
 		<>
-			{loading ? (
-				<div className="flex justify-center">
-					<div className="skeleton mr-2 h-4 w-4 rounded-full"></div>
-					<div className="skeleton h-4 w-1/2"></div>
-				</div>
+			{context.loading ? (
+				<div className={"skeleton " + className}></div>
 			) : children ? (
 				children
 			) : (
-				<div>{fallbackMsg}</div>
+				<div>{fallback}</div>
 			)}
 		</>
 	);

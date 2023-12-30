@@ -1,6 +1,6 @@
 import { prominent } from "color.js";
 import { useState, useEffect } from "react";
-import { TrackInfo, getLatestTrack } from "./lastfm";
+import { TrackInfo, getLatestTrack } from "@repo/utils/lastftm";
 import { Colors, Props } from "./ReactLastFMViewer";
 
 type lfmvHook = {

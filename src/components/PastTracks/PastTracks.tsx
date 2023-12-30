@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { lfmContext } from "../ReactLastFMViewer";
 import { FaRegUser, FaCalendar } from "react-icons/fa";
-import styles from "./PastTracks.module.css";
+import styles from "@repo/ui/PastTracks.module.css";
+import LoadingSkeleton from "../LoadingSkeleton/LoadingSkeleton";
 
 const identity: (x: any) => any = (x: any) => x;
 function cloneArray(arr: any[]) {
@@ -13,14 +14,14 @@ const PastTracks = () => {
 	return (
 		<>
 			<div
-				className="mb-4 rounded-lg p-0.5 sm:p-4"
+				className={styles.pastTracks}
 				style={{
 					color: context.colors?.secondary,
 					background: context.colors?.accent + "22"
 				}}
 			>
 				<div
-					className="divider mx-auto mb-0 mt-0.5 w-1/2 rounded-lg p-2 text-xs sm:text-sm"
+					className={styles.pastTracks__title}
 					style={{
 						color: context.colors?.secondary,
 						background: context.colors?.accent + "22"
@@ -28,63 +29,75 @@ const PastTracks = () => {
 				>
 					Past tracks
 				</div>
-				{context.track instanceof Error
-					? ""
-					: context.track?.pastTracks
-						? cloneArray(context.track?.pastTracks)
-								.splice(1, context.track?.pastTracks.length)
-								.map((track_) => {
-									return (
-										<div
-											key={
-												track_.date["#text"] +
-												track_.name
-											}
-											className="text-[50%]  sm:text-[75%]"
-										>
-											<div className="divider m-0.5 h-min"></div>
+				<LoadingSkeleton className="h-[200px]" fallback={undefined}>
+					{context.track instanceof Error
+						? ""
+						: context.track?.pastTracks
+						  ? cloneArray(context.track?.pastTracks)
+									.splice(1, context.track?.pastTracks.length)
+									.map((track_) => {
+										return (
 											<div
+												key={
+													track_.date["#text"] +
+													track_.name
+												}
 												className={
-													"width-full  flex items-center justify-between gap-4 overflow-x-scroll whitespace-nowrap " +
-													styles.scrollable
+													styles.pastTracks__track
 												}
 											>
-												<a
-													href={track_.url}
-													target="_blank"
-													className="flex-1 text-ellipsis text-start font-black transition-all duration-150 hover:underline"
-													style={{
-														color: context.colors
-															?.secondary
-													}}
+												<div className="divider m-0.5 h-min"></div>
+												<div
+													className={
+														styles.scrollable
+													}
 												>
-													{track_.name}
-												</a>
-												<span
-													className="flex flex-1 flex-col items-center sm:flex-row "
-													style={{
-														color: context.colors
-															?.secondary
-													}}
-												>
-													<FaRegUser />
-													{track_.artist["#text"]}
-												</span>
-												<span
-													className="flex flex-col items-center sm:flex-row "
-													style={{
-														color: context.colors
-															?.secondary
-													}}
-												>
-													<FaCalendar />
-													{track_.date["#text"]}
-												</span>
+													<a
+														href={track_.url}
+														target="_blank"
+														className={
+															styles.pastTracks__trackTitle
+														}
+														style={{
+															color: context
+																.colors
+																?.secondary
+														}}
+													>
+														{track_.name}
+													</a>
+													<span
+														className={
+															styles.scrollable__artist
+														}
+														style={{
+															color: context
+																.colors
+																?.secondary
+														}}
+													>
+														<FaRegUser />
+														{track_.artist["#text"]}
+													</span>
+													<span
+														className={
+															styles.scrollable__date
+														}
+														style={{
+															color: context
+																.colors
+																?.secondary
+														}}
+													>
+														<FaCalendar />
+														{track_.date["#text"]}
+													</span>
+												</div>
 											</div>
-										</div>
-									);
-								})
-						: ""}
+										);
+									})
+						  : ""}
+				</LoadingSkeleton>
 			</div>
 		</>
 	);

@@ -1,3 +1,5 @@
+import styles from "@repo/ui/ErrorView.module.css";
+
 const unexpectedErrors = [
 	"NetworkError when attempting to fetch resource.",
 	"Login: User required to be logged in",
@@ -16,10 +18,8 @@ const ErrorView = ({ message }: { message: string }) => {
 				</h1>
 			)}
 
-			<div className="mx-auto my-4 w-11/12 rounded-lg bg-red-900 p-5 text-xl text-red-200 shadow-inner">
-				<span className="mr-2 rounded-lg bg-black/10 p-2 text-white">
-					Error
-				</span>
+			<div className={styles.errorView}>
+				<span>Error</span>
 				{message}
 			</div>
 		</div>

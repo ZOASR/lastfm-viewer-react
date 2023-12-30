@@ -1,14 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import tailwindConfig from "@repo/tailwind-config";
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-	theme: {
-		extend: {},
-		fontFamily: {
-			display: "Barlow",
-		},
-	},
-	plugins: [require("daisyui")],
-	corePlugins: {
-		preflight: false,
-	},
+	presets: [tailwindConfig]
 };
