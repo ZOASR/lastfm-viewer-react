@@ -85,7 +85,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 									/>
 								) : track?.MBImages ? (
 									<img
-										src={track.MBImages[0].image}
+										src={track.MBImages[0].thumbnails[250]}
 										alt="Album Cover"
 									/>
 								) : (
