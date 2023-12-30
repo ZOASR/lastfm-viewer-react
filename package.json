@@ -1,7 +1,7 @@
 {
   "name": "react-lastfm-viewer",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "A React component to view recent scrobbles for a last.fm user",
   "keywords": [
     "lastfm",
@@ -38,7 +38,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "update": "npm i --legacy-peer-deps && git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && && git push origin && git-cliff > CHANGELOG.md && npm publish"
+    "update": "git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && git push origin && git-cliff > CHANGELOG.md && pnpm publish"
   },
   "dependencies": {
     "react": "^18.2.0",
