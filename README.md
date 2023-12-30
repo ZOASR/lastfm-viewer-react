@@ -1,7 +1,7 @@
 # react-lastfm-viewer
 
 > [!NOTE]
-> This repository is now part of a monorepo if you want to start developing on it got to the original monorepo [here](https://github.com/ZOASR/lastfm-viewer)
+> This repository is now part of a monorepo if you want to start developing on it go to the original monorepo [here](https://github.com/ZOASR/lastfm-viewer)
 
 <p align="center">
 	<a href="https://npm.io/package/react-lastfm-viewer"><img src="https://img.shields.io/badge/maintained%20with-npm-cc00ff.svg?style=for-the-badge&logo=npm" ></a>
