@@ -17,14 +17,14 @@ const PastTracks = () => {
 				className={styles.pastTracks}
 				style={{
 					color: context.colors?.secondary,
-					background: context.colors?.accent + "22"
+					background: context.colors?.accent
 				}}
 			>
 				<div
 					className={styles.pastTracks__title}
 					style={{
 						color: context.colors?.secondary,
-						background: context.colors?.accent + "22"
+						background: context.colors?.accent
 					}}
 				>
 					Past tracks

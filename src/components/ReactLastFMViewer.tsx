@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { TrackInfo } from "@repo/utils/lastftm";
+import { Colors, TrackInfo } from "@repo/utils/lastftm";
 import { useLastfmViewer } from "./useLastfmViewer";
 
 import TrackProgressBar from "./TrackProgressBar/TrackProgressBar";
@@ -14,11 +14,6 @@ import styles from "@repo/ui/LastFMViewer.module.css";
 import disc from "./disc.svg";
 import "@repo/ui";
 
-export interface Colors {
-	primary: string | undefined;
-	secondary: string | undefined;
-	accent: string | undefined;
-}
 export interface Props {
 	api_key: string;
 	user: string;
@@ -35,7 +30,7 @@ export const lfmContext = createContext<{
 		trackName: "",
 		artistName: "",
 		albumTitle: "",
-		MBImages: [],
+		colors: undefined,
 		imageUrl: undefined,
 		nowplaying: false,
 		pastTracks: [],
@@ -74,7 +69,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 						<>
 							<figure
 								style={{
-									boxShadow: `0 0 20px ${colors?.secondary}99`
+									boxShadow: `0 0 20px ${colors?.secondary}`
 								}}
 							>
 								{track?.imageUrl ? (
