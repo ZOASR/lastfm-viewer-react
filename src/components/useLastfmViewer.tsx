@@ -9,7 +9,7 @@ type lfmvHook = {
 	message: string;
 };
 
-export const useLastfmViewer: ({}: Props) => lfmvHook = ({
+export const useLastfmViewer: (obj: Props) => lfmvHook = ({
 	user,
 	api_key,
 	updateInterval
@@ -42,7 +42,7 @@ export const useLastfmViewer: ({}: Props) => lfmvHook = ({
 		return () => {
 			if (updateInterval) clearInterval(intervalRef);
 		};
-	}, []);
+	}, [user, api_key, updateInterval]);
 
 	return {
 		track,
