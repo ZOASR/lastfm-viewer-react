@@ -36,7 +36,7 @@ export const lfmContext = createContext<{
 		artistName: "",
 		albumTitle: "",
 		MBImages: [],
-		lastfmImages: [],
+		imageUrl: undefined,
 		nowplaying: false,
 		pastTracks: [],
 		duration: 0
@@ -77,15 +77,9 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 									boxShadow: `0 0 20px ${colors?.secondary}99`
 								}}
 							>
-								{track?.lastfmImages &&
-								track?.lastfmImages[3]["#text"] ? (
+								{track?.imageUrl ? (
 									<img
-										src={track.lastfmImages[3]["#text"]}
-										alt="Album Cover"
-									/>
-								) : track?.MBImages ? (
-									<img
-										src={track.MBImages[0].thumbnails[250]}
+										src={track.imageUrl}
 										alt="Album Cover"
 									/>
 								) : (
