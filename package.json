@@ -1,7 +1,7 @@
 {
   "name": "react-lastfm-viewer",
   "private": false,
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A React component to view recent scrobbles for a last.fm user",
   "keywords": [
     "lastfm",
@@ -61,6 +61,7 @@
     "@repo/utils": "workspace:*",
     "@repo/vite-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
-    "@repo/ui": "workspace:*"
+    "@repo/ui": "workspace:*",
+    "@repo/eslint-config": "workspace:*"
   }
 }
