@@ -38,7 +38,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "update": "git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && git push origin && git-cliff > CHANGELOG.md && pnpm publish"
+    "changelog": " git-cliff > CHANGELOG.md && git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && git push origin"
   },
   "dependencies": {
     "react": "^18.2.0",

@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2024-01-01
+
+### Bug Fixes
+
+- Wrong import
+
+### Refactor
+
+- Use imageUrl in Track info instead of conditionally rendering the image based on sources
+- Simplified colors and used color data from track info
+
+### Dev
+
+- Removed color.js as a dependency (now handeled in the utility package)
+- Eslint configs
+
+### Update
+
+- Changelog
+- Changeset version
+- V2.0.0
+
 ## [1.1.2] - 2023-12-30
 
 ### Documentation
