@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Colors, TrackInfo } from "@repo/utils/lastftm";
+import { Colors, TrackInfo } from "@repo/utils/lastfm";
 import { useLastfmViewer } from "./useLastfmViewer";
 
 import TrackProgressBar from "./TrackProgressBar/TrackProgressBar";
