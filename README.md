@@ -11,11 +11,6 @@
 
 A React component to view recent [scrobbles](https://www.dictionary.com/browse/scrobble) for a provided [last.fm](last.fm) user, built with:
 
--   `tailwind`, `daisyui`
--   `vite`
--   `lastfm-ts-api`
--   `color.js`
-
 <p align="center">
   <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_1.png" style="border-radius: 10px"/>
   <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
@@ -26,11 +21,11 @@ A React component to view recent [scrobbles](https://www.dictionary.com/browse/s
 Install it:
 
 ```bash
-npm i react-lastfm-viewer
+npm i @lastfm-viewer/react
 # or
-yarn add react-lastfm-viewer
+yarn add @lastfm-viewer/react
 # or
-pnpm add react-lastfm-viewer
+pnpm add @lastfm-viewer/react
 ```
 
 ## Use it
@@ -40,7 +35,7 @@ to start using the component you first need to get a last.fm API key from [here]
 > Please note that some users set their profile stats to private, so not every user is applicable, if you're using this component on your personal account just set your "Recent listening" stats to public [here](https://www.last.fm/settings/privacy)
 
 ```tsx
-import ReactLastFMViewer from "react-lastfm-viewer";
+import ReactLastFMViewer from "@lastfm-viewer/react";
 
 function App() {
 	return (
@@ -54,7 +49,7 @@ function App() {
 if you want to frequently fetch the user's listening info just specify the `updateInterval` prop. (milliseconds) (it takes a number that determines the update interval):
 
 ```tsx
-import ReactLastFMViewer from "react-lastfm-viewer";
+import ReactLastFMViewer from "@lastfm-viewer/react";
 
 function App() {
 	return (
