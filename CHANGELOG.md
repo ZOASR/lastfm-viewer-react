@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.1] - 2024-01-02
+
+### Update
+
+- V2.1.1
+
 ## [2.1.0] - 2024-01-02
 
 ### Miscellaneous Tasks
