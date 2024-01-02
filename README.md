@@ -1,4 +1,4 @@
-# react-lastfm-viewer
+# @lastfm-viewer/react
 
 > [!NOTE]
 > This repository is now part of a monorepo if you want to start developing on it go to the original monorepo [here](https://github.com/ZOASR/lastfm-viewer)
