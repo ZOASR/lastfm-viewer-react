@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Dev
+
+- Added turbo folder to gitignore
+- Fixed wrong import typo
+
+### Update
+
+- V2.0.0
+
 ## [2.0.0] - 2024-01-01
 
 ### Bug Fixes
