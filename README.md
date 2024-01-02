@@ -4,16 +4,15 @@
 > This repository is now part of a monorepo if you want to start developing on it go to the original monorepo [here](https://github.com/ZOASR/lastfm-viewer)
 
 <p align="center">
-	<a href="https://npm.io/package/react-lastfm-viewer"><img src="https://img.shields.io/badge/maintained%20with-npm-cc00ff.svg?style=for-the-badge&logo=npm" ></a>
-    <a href="https://www.npmjs.com/package/react-lastfm-viewer" alt="react-lastfm-viewer(npm)">
-        <img src="https://img.shields.io/npm/dt/react-lastfm-viewer?style=for-the-badge&logo=npm&logoColor=red&label=react-lastfm-viewer" /></a>
+    <a href="https://www.npmjs.com/package/@lastfm-viewer/react" alt="@lastfm-viewer/react(npm)">
+        <img src="https://img.shields.io/npm/dt/@lastfm-viewer/react?style=for-the-badge&logo=npm&logoColor=red&label=@lastfm-viewer/react" /></a>
 </p>
 
 A React component to view recent [scrobbles](https://www.dictionary.com/browse/scrobble) for a provided [last.fm](last.fm) user, built with:
 
 <p align="center">
-  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_1.png" style="border-radius: 10px"/>
-  <img src="https://github.com/ZOASR/react-lastfm-viewer/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
+  <img src="https://github.com/ZOASR/lastfm-viewer-react/blob/main/images/Preview_1.png" style="border-radius: 10px"/>
+  <img src="https://github.com/ZOASR/lastfm-viewer-react/blob/main/images/Preview_2.png" style="border-radius: 10px"/>
 </p>
 
 ## Quick start
