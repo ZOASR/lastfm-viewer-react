@@ -24,7 +24,7 @@ const PastTracks = () => {
 					className={styles.pastTracks__title}
 					style={{
 						color: context.colors?.secondary,
-						background: context.colors?.accent
+						background: `rgb(from ${context.colors?.primary} r g b / 50%)`
 					}}
 				>
 					Past tracks
