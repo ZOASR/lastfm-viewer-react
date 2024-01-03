@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [2.1.2] - 2024-01-03
 
 ### Styling
 
@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Update
 
 - V2.1.1
+- V2.1.2
 
 ## [2.1.1] - 2024-01-02
 
