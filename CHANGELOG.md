@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Styling
+
+- Modified shadow color for album cover
+- Modified background color for past tracks title
+
+### Update
+
+- V2.1.1
+
 ## [2.1.1] - 2024-01-02
 
 ### Update
