@@ -69,7 +69,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 						<>
 							<figure
 								style={{
-									boxShadow: `0 0 20px ${colors?.secondary}`
+									boxShadow: `0 0 20px rgb( from ${colors?.secondary} r g b / 25%)`
 								}}
 							>
 								{track?.imageUrl ? (
