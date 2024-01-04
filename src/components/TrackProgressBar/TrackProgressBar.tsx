@@ -1,15 +1,7 @@
 import { useContext } from "react";
 import { lfmContext } from "../ReactLastFMViewer";
 import styles from "@lastfm-viewer/ui/TrackProgressBar.module.css";
-
-const msToMins = (ms: number) =>
-	Math.floor(ms / 1000 / 60).toLocaleString(undefined, {
-		maximumSignificantDigits: 2
-	});
-const msToSecs = (ms: number) =>
-	Math.floor((ms / 1000) % 60).toLocaleString(undefined, {
-		maximumSignificantDigits: 2
-	});
+import { msToMins, msToSecs } from "@lastfm-viewer/utils/utils";
 
 const TrackProgressBar = () => {
 	const context = useContext(lfmContext);
