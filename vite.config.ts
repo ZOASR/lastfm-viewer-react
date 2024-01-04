@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import path from "path";
 import react from "@vitejs/plugin-react";
-import viteConfigs from "@repo/vite-config";
+import viteConfigs from "@lastfm-viewer/vite-config";
 
 // https://vitejs.dev/config/
 export default defineConfig({

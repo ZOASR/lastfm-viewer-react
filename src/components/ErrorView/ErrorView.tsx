@@ -1,5 +1,5 @@
-import styles from "@repo/ui/ErrorView.module.css";
-import { unexpectedErrors } from "@repo/utils/utils";
+import styles from "@lastfm-viewer/ui/ErrorView.module.css";
+import { unexpectedErrors } from "@lastfm-viewer/utils/utils";
 
 const ErrorView = ({ message }: { message: string }) => {
 	return (

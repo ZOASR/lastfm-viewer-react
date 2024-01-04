@@ -1,7 +1,7 @@
 import { FaLastfmSquare, FaRegUser } from "react-icons/fa";
 import { SiMusicbrainz } from "react-icons/si";
-import { Colors } from "@repo/utils/types";
-import styles from "@repo/ui/CardFooter.module.css";
+import { Colors } from "@lastfm-viewer/utils/types";
+import styles from "@lastfm-viewer/ui/CardFooter.module.css";
 
 const CardFooter = ({
 	colors,

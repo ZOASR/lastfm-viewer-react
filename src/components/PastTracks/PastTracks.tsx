@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { lfmContext } from "../ReactLastFMViewer";
 import { FaRegUser, FaCalendar } from "react-icons/fa";
-import styles from "@repo/ui/PastTracks.module.css";
+import styles from "@lastfm-viewer/ui/PastTracks.module.css";
 import LoadingSkeleton from "../LoadingSkeleton/LoadingSkeleton";
 
-import { cloneArray } from "@repo/utils/utils";
+import { cloneArray } from "@lastfm-viewer/utils/utils";
 
 const PastTracks = () => {
 	const context = useContext(lfmContext);

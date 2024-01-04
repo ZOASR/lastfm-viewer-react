@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Colors, TrackInfo } from "@repo/utils/types";
+import { Colors, TrackInfo } from "@lastfm-viewer/utils/types";
 import { useLastfmViewer } from "./useLastfmViewer";
 
 import TrackProgressBar from "./TrackProgressBar/TrackProgressBar";
@@ -10,9 +10,9 @@ import LoadingSkeleton from "./LoadingSkeleton/LoadingSkeleton";
 
 import { FaRegUser, FaCompactDisc } from "react-icons/fa";
 
-import styles from "@repo/ui/LastFMViewer.module.css";
+import styles from "@lastfm-viewer/ui/LastFMViewer.module.css";
 import disc from "./disc.svg";
-import "@repo/ui";
+import "@lastfm-viewer/ui";
 
 export interface Props {
 	api_key: string;
