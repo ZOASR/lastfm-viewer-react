@@ -4,10 +4,7 @@ import { FaRegUser, FaCalendar } from "react-icons/fa";
 import styles from "@repo/ui/PastTracks.module.css";
 import LoadingSkeleton from "../LoadingSkeleton/LoadingSkeleton";
 
-const identity: (x: any) => any = (x: any) => x;
-function cloneArray(arr: any[]) {
-	return arr.map(identity);
-}
+import { cloneArray } from "@repo/utils/utils";
 
 const PastTracks = () => {
 	const context = useContext(lfmContext);

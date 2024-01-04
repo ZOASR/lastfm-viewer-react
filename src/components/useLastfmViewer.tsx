@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Colors, TrackInfo, getLatestTrack } from "@repo/utils/lastfm";
+import { getLatestTrack } from "@repo/utils/lastfm";
 import { Props } from "./ReactLastFMViewer";
+import { Colors, TrackInfo } from "@repo/utils/types";
 
 type lfmvHook = {
 	track: TrackInfo | Error | undefined;
