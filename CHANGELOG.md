@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### Refactor
+
+- Scoped daisyui styles to avoid unwanted conflicts
+
+## [2.2.0] - 2024-01-08
+
 ### Bug Fixes
 
 - Fixed wrong number formatting when displaying track length
@@ -15,6 +21,10 @@ All notable changes to this project will be documented in this file.
 ### Styling
 
 - Changed album cover shadow to hsla color for better browser compatibility
+
+### Update
+
+- V2.2.0
 
 ## [2.1.5] - 2024-01-04
 
