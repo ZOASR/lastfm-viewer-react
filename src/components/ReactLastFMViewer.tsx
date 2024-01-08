@@ -25,7 +25,12 @@ export const lfmContext = createContext<{
 	track: TrackInfo | Error | undefined;
 	loading: boolean;
 }>({
-	colors: { primary: "white", secondary: "black", accent: "#aaa" },
+	colors: {
+		primary: "white",
+		secondary: "black",
+		accent: "#aaa",
+		coverShadowColor: undefined
+	},
 	track: {
 		trackName: "",
 		artistName: "",
@@ -69,7 +74,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 						<>
 							<figure
 								style={{
-									boxShadow: `0 0 20px rgb( from ${colors?.secondary} r g b / 25%)`
+									boxShadow: `0 0 20px ${colors?.coverShadowColor}`
 								}}
 							>
 								{track?.imageUrl ? (
