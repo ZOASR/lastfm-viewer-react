@@ -25,6 +25,8 @@ npm i @lastfm-viewer/react
 yarn add @lastfm-viewer/react
 # or
 pnpm add @lastfm-viewer/react
+# or
+bun i @lastfm-viewer/react
 ```
 
 ## Use it
