@@ -2,11 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [2.2.1] - 2024-01-08
 
 ### Refactor
 
 - Scoped daisyui styles to avoid unwanted conflicts
+
+### Update
+
+- V2.2.1
 
 ## [2.2.0] - 2024-01-08
 
