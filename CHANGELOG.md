@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Bug Fixes
+
+- Fixed some of daisyui themes are applied to the whole page
+
+### Documentation
+
+- Modified package git repo url
+- Added bun as an installer in README
+
+### Update
+
+- V2.2.1
+
 ## [2.2.1] - 2024-01-08
 
 ### Refactor
