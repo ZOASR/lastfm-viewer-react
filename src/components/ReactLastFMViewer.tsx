@@ -67,7 +67,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 				<div
 					className={styles.lfmvCard}
 					style={{ background: colors?.primary }}
-					data-theme="dark"
+					data-lfmv="dark"
 				>
 					{track instanceof Error ? (
 						<ErrorView message={message} />
