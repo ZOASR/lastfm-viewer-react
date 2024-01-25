@@ -121,7 +121,7 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 								</h1>
 								<div
 									style={{ color: colors?.secondary }}
-									className="flex flex-col gap-2 text-xs"
+									className="flex flex-col gap-2"
 								>
 									<LoadingSkeleton
 										className={styles.titleSkeleton}

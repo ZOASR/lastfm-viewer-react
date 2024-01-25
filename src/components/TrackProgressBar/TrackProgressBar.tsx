@@ -34,27 +34,27 @@ const TrackProgressBar = () => {
 				className={styles.bar}
 				style={{ color: context?.colors?.secondary }}
 			>
-				<span className="text-xs">00:00</span>
+				<span>00:00</span>
 				<progress
 					className="progress"
 					max={
 						context.track instanceof Error
 							? 0
 							: context.track
-							  ? context.track?.duration / 1000
-							  : 0
+								? context.track?.duration / 1000
+								: 0
 					}
 				></progress>
-				<span className="text-xs">
+				<span>
 					{context.track instanceof Error
 						? " "
 						: context.track
-						  ? context.track.duration > 0
+							? context.track.duration > 0
 								? `${msToMins(
 										context.track?.duration
-								  )}:${msToSecs(context.track?.duration)}`
+									)}:${msToSecs(context.track?.duration)}`
 								: "--:--"
-						  : "--:--"}
+							: "--:--"}
 				</span>
 			</div>
 		</>
