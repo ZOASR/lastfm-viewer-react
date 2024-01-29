@@ -4,9 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### Bug Fixes
+
+- Removed relative color in pasttracks title background
+
+### Documentation
+
+- Added project logo and homepage
+
+## [2.2.4] - 2024-01-25
+
 ### Styling
 
 - Changed font sizing to adapt to any page styles
+
+### Update
+
+- V2.2.4
 
 ## [2.2.3] - 2024-01-19
 
