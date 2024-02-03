@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [2.2.5] - 2024-01-29
 
 ### Bug Fixes
 
@@ -11,6 +11,10 @@ All notable changes to this project will be documented in this file.
 ### Documentation
 
 - Added project logo and homepage
+
+### Update
+
+- V2.2.5
 
 ## [2.2.4] - 2024-01-25
 
