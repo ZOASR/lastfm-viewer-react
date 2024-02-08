@@ -53,6 +53,30 @@ function App() {
 }
 ```
 
+<p align="center">
+	<div style="height: 4px; background: #61dafb; width: 80%; margin: 0 auto; border-radius: 5px"></div>
+ </p>
+
+## Props:
+
+### `user: string` :
+
+last.fm username
+
+<p align="center">
+	<div style="height: 4px; background: #61dafb; width: 50%; margin: 0 auto; border-radius: 5px"></div>
+ </p>
+
+### `api_key: string` :
+
+your last.fm public api key
+
+<p align="center">
+	<div style="height: 4px; background: #61dafb; width: 50%; margin: 0 auto; border-radius: 5px"></div>
+ </p>
+
+### `updateInterval?: number` :
+
 if you want to frequently fetch the user's listening info just specify the `updateInterval` prop. (milliseconds) (it takes a number that determines the update interval):
 
 ```tsx
@@ -64,7 +88,7 @@ function App() {
 			<ReactLastFMViewer
 				user="[username]"
 				api_key="[API_KEY]"
-				updateInterval={20000} //20 seconds
+				updateInterval={20000} {/* 20 seconds */}
 			/>
 		</>
 	);
@@ -73,3 +97,21 @@ function App() {
 
 > [!CAUTION]
 > setting the `updateInterval` prop to a low number might subject your api key for termination, to avoid this just use a higher more reasonable number.
+
+<p align="center">
+	<div style="height: 4px; background: #61dafb; width: 50%; margin: 0 auto; border-radius: 5px"></div>
+ </p>
+
+### `mode?: ("dev" | "prod")` = `"dev"` :
+
+The default value for this prop is: `"dev"`
+
+when using `"dev"` mode any error that haapens will be viewed with the following message above it:
+
+`Hello developer👋, please consider handling the following error before deployment:`
+
+![Error during development](./images/error_dev.png)
+
+when using `"prod"` mode the error is shown as is:
+
+![Error during production](./images/error_prod.png)
