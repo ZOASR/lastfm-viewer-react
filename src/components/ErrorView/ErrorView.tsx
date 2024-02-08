@@ -1,12 +1,15 @@
 import styles from "@lastfm-viewer/ui/ErrorView.module.css";
-import { unexpectedErrors } from "@lastfm-viewer/utils/utils";
 
-const ErrorView = ({ message }: { message: string }) => {
+const ErrorView = ({
+	message,
+	mode
+}: {
+	message: string;
+	mode: "prod" | "dev";
+}) => {
 	return (
 		<div>
-			{unexpectedErrors.includes(message) ? (
-				""
-			) : (
+			{mode === "dev" && (
 				<h1>
 					Hello developer👋, please consider handling the following
 					error before deployment:

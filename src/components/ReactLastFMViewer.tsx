@@ -18,6 +18,7 @@ export interface Props {
 	api_key: string;
 	user: string;
 	updateInterval?: number;
+	mode?: "dev" | "prod";
 }
 
 export const lfmContext = createContext<{
@@ -44,7 +45,12 @@ export const lfmContext = createContext<{
 	loading: true
 });
 
-const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
+const ReactLastFMViewer = ({
+	api_key,
+	user,
+	updateInterval,
+	mode = "dev"
+}: Props) => {
 	const { track, colors, loading, message } = useLastfmViewer({
 		api_key,
 		user,
@@ -69,35 +75,34 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 					data-lfmv="dark"
 				>
 					{track instanceof Error ? (
-						<ErrorView message={message} />
+						<ErrorView mode={mode} message={message} />
 					) : (
 						<>
-							<figure
-								style={{
-									boxShadow: `0 0 20px ${colors?.coverShadowColor}`
-								}}
-							>
-								{track?.imageUrl ? (
-									<img
-										src={track.imageUrl}
-										alt="Album Cover"
-									/>
-								) : (
-									<LoadingSkeleton
-										className="mx-auto h-[300px] w-[300px]"
-										fallback={
-											<img
-												src={disc}
-												alt="Default album cover thumbnail"
-											/>
-										}
-									>
-										{null}
-									</LoadingSkeleton>
-								)}
-							</figure>
-
-							<div className={styles.cardBody}>
+							<div>
+								<figure
+									style={{
+										boxShadow: `0 0 20px ${colors?.coverShadowColor}`
+									}}
+								>
+									{track?.imageUrl ? (
+										<img
+											src={track.imageUrl}
+											alt="Album Cover"
+										/>
+									) : (
+										<LoadingSkeleton
+											className="mx-auto h-[300px] w-[300px]"
+											fallback={
+												<img
+													src={disc}
+													alt="Default album cover thumbnail"
+												/>
+											}
+										>
+											{null}
+										</LoadingSkeleton>
+									)}
+								</figure>
 								<LoadingSkeleton
 									className="mx-auto h-[40px] w-[90%]"
 									fallback={null}
@@ -146,6 +151,8 @@ const ReactLastFMViewer = ({ api_key, user, updateInterval }: Props) => {
 										)}
 									</LoadingSkeleton>
 								</div>
+							</div>
+							<div className={styles.cardBody}>
 								<PastTracks />
 								<CardFooter user={user} colors={colors} />
 							</div>
