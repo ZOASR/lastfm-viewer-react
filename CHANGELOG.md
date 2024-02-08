@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Bug Fixes
+
+- Added the mode prop for handling errors in error view
+
+### Documentation
+
+- Added better documentation for usage
+
+### Dev
+
+- Added a test component to test for built library
+
+## [2.2.6] - 2024-02-03
+
+### Update
+
+- V2.2.6
+
 ## [2.2.5] - 2024-01-29
 
 ### Bug Fixes
