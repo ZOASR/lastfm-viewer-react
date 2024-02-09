@@ -1,0 +1,11 @@
+<svg viewBox="-1 0 102 4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<path class="divider" d="M0 2 L100 2" />
+	<style>
+		.divider {
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke: #61dafb;
+			stroke-width: 1;
+		}
+	</style>
+</svg>

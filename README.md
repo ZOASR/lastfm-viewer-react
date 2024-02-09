@@ -54,8 +54,8 @@ function App() {
 ```
 
 <p align="center">
-	<div style="height: 4px; background: #61dafb; width: 80%; margin: 0 auto; border-radius: 5px"></div>
- </p>
+<img width="80%" src="./images/divider.svg" />
+</p>
 
 ## Props:
 
@@ -64,16 +64,16 @@ function App() {
 last.fm username
 
 <p align="center">
-	<div style="height: 4px; background: #61dafb; width: 50%; margin: 0 auto; border-radius: 5px"></div>
- </p>
+<img width="50%" src="./images/divider.svg" />
+</p>
 
 ### `api_key: string` :
 
 your last.fm public api key
 
 <p align="center">
-	<div style="height: 4px; background: #61dafb; width: 50%; margin: 0 auto; border-radius: 5px"></div>
- </p>
+<img width="50%" src="./images/divider.svg" />
+</p>
 
 ### `updateInterval?: number` :
 
@@ -99,8 +99,8 @@ function App() {
 > setting the `updateInterval` prop to a low number might subject your api key for termination, to avoid this just use a higher more reasonable number.
 
 <p align="center">
-	<div style="height: 4px; background: #61dafb; width: 50%; margin: 0 auto; border-radius: 5px"></div>
- </p>
+<img width="50%" src="./images/divider.svg" />
+</p>
 
 ### `mode?: ("dev" | "prod")` = `"dev"` :
 
