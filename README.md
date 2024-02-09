@@ -3,7 +3,7 @@
 > [!NOTE]
 > This repository is now part of a monorepo if you want to start developing on it go to the original monorepo [here](https://github.com/ZOASR/lastfm-viewer)
 
-## Homepage: [lastfm-viewer.vercel.app](lastfm-viewer.vercel.app)
+## Homepage: [lastfm-viewer.vercel.app](https://lastfm-viewer.vercel.app)
 
 <p align="center" >
   <img  style="filter: drop-shadow(0 0 10px black);" src="./images/lfmv_logo.svg" width="100%" height="100" />
