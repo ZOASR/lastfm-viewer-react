@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 ### Update
 
 - V2.3.0
+- V2.3.0
 
 ## [2.3.0] - 2024-02-08
 
