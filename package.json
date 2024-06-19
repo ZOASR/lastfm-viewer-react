@@ -43,27 +43,27 @@
     "changelog": " git-cliff > CHANGELOG.md && git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && git push origin"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "@vitejs/plugin-react": "^4.2.0",
-    "dotenv": "^16.3.1",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
-    "react-icons": "^4.12.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.4",
-    "@lastfm-viewer/utils": "workspace:*",
-    "@lastfm-viewer/vite-config": "workspace:*",
+    "@lastfm-viewer/eslint-config": "workspace:*",
     "@lastfm-viewer/tailwind-config": "workspace:*",
     "@lastfm-viewer/ui": "workspace:*",
-    "@lastfm-viewer/eslint-config": "workspace:*"
+    "@lastfm-viewer/utils": "workspace:*",
+    "@lastfm-viewer/vite-config": "workspace:*",
+    "@types/node": "^20.14.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "react-icons": "^4.12.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1"
   }
 }
