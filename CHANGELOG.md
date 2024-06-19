@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### Documentation
+
+- Added svg as a divider instead of html div
+
+### Build
+
+- Upgraded packages
+
+## [2.3.0] - 2024-02-08
+
 ### Bug Fixes
 
 - Added the mode prop for handling errors in error view
@@ -15,6 +25,10 @@ All notable changes to this project will be documented in this file.
 ### Dev
 
 - Added a test component to test for built library
+
+### Update
+
+- V2.3.0
 
 ## [2.2.6] - 2024-02-03
 
