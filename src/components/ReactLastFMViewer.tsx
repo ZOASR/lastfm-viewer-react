@@ -12,7 +12,6 @@ import { FaRegUser, FaCompactDisc } from "react-icons/fa";
 import { BsDiscFill } from "react-icons/bs";
 
 import styles from "@lastfm-viewer/ui/LastFMViewer.module.css";
-import disc from "./disc.svg";
 import "@lastfm-viewer/ui";
 
 export interface Props {
