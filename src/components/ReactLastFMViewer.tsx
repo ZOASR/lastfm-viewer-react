@@ -9,6 +9,7 @@ import CardFooter from "./CardFooter/CardFooter";
 import LoadingSkeleton from "./LoadingSkeleton/LoadingSkeleton";
 
 import { FaRegUser, FaCompactDisc } from "react-icons/fa";
+import { BsDiscFill } from "react-icons/bs";
 
 import styles from "@lastfm-viewer/ui/LastFMViewer.module.css";
 import disc from "./disc.svg";
@@ -81,7 +82,7 @@ const ReactLastFMViewer = ({
 							<div>
 								<figure
 									style={{
-										boxShadow: `0 0 20px ${colors?.coverShadowColor}`
+										filter: ` drop-shadow(0 0 20px ${colors?.coverShadowColor} ) `
 									}}
 								>
 									{track?.imageUrl ? (
