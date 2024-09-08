@@ -12,7 +12,7 @@ const CardFooter = ({
 }) => {
 	return (
 		<div style={{ color: colors?.secondary }} className={styles.cardFooter}>
-			<span className="flex gap-2">
+			<span className="flex items-center gap-2">
 				<a
 					href="https://www.last.fm/"
 					target="_blank"
@@ -26,6 +26,10 @@ const CardFooter = ({
 			</span>
 			<a
 				className={styles.profile}
+				style={{
+					background: colors?.secondary,
+					color: colors?.primary
+				}}
 				href={`https://www.last.fm/user/${user}`}
 			>
 				<FaRegUser />
