@@ -93,10 +93,15 @@ const ReactLastFMViewer = ({
 										<LoadingSkeleton
 											className="mx-auto h-[300px] w-[300px]"
 											fallback={
-												<img
-													src={disc}
-													alt="Default album cover thumbnail"
-												/>
+												<div
+													className={`h-[300px] ${track?.nowplaying && "!animate-spin-slow"}`}
+												>
+													<BsDiscFill className="h-full w-full" />
+												</div>
+												// <img
+												// 	src={disc}
+												// 	alt="Default album cover thumbnail"
+												// />
 											}
 										>
 											{null}
