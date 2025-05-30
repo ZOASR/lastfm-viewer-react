@@ -94,7 +94,7 @@ const ReactLastFMViewer = ({
 											className="mx-auto h-[300px] w-[300px]"
 											fallback={
 												<div
-													className={`h-[300px] ${track?.nowplaying && "!animate-spin-slow"}`}
+													className={`h-[300px] [color:var(--default-secondary)] ${track?.nowplaying && "!animate-spin-slow"}`}
 												>
 													<BsDiscFill className="h-full w-full" />
 												</div>
