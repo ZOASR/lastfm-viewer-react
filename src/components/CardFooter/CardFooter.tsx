@@ -1,7 +1,6 @@
 import { FaLastfmSquare, FaRegUser } from "react-icons/fa";
 import { SiMusicbrainz } from "react-icons/si";
 import { Colors } from "@lastfm-viewer/utils/types";
-import styles from "@lastfm-viewer/ui/CardFooter.module.css";
 
 const CardFooter = ({
 	colors,
@@ -11,7 +10,7 @@ const CardFooter = ({
 	user: string;
 }) => {
 	return (
-		<div style={{ color: colors?.secondary }} className={styles.cardFooter}>
+		<div style={{ color: colors?.secondary }} className={`cardFooter`}>
 			<span className="flex items-center gap-2">
 				<a
 					href="https://www.last.fm/"
@@ -25,7 +24,7 @@ const CardFooter = ({
 				</a>
 			</span>
 			<a
-				className={styles.profile}
+				className={`profile`}
 				style={{
 					background: colors?.secondary,
 					color: colors?.primary

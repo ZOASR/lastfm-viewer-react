@@ -1,6 +1,7 @@
 import { createContext } from "react";
-import { Colors, TrackInfo } from "@lastfm-viewer/utils/types";
 import { useLastfmViewer } from "./useLastfmViewer";
+import { FaRegUser, FaCompactDisc } from "react-icons/fa";
+import { BsDiscFill } from "react-icons/bs";
 
 import TrackProgressBar from "./TrackProgressBar/TrackProgressBar";
 import PastTracks from "./PastTracks/PastTracks";
@@ -8,11 +9,13 @@ import ErrorView from "./ErrorView/ErrorView";
 import CardFooter from "./CardFooter/CardFooter";
 import LoadingSkeleton from "./LoadingSkeleton/LoadingSkeleton";
 
-import { FaRegUser, FaCompactDisc } from "react-icons/fa";
-import { BsDiscFill } from "react-icons/bs";
-
-import styles from "@lastfm-viewer/ui/LastFMViewer.module.css";
-import "@lastfm-viewer/ui";
+import { Colors, TrackInfo } from "@lastfm-viewer/utils/types";
+import "@lastfm-viewer/ui/styles/LastFMViewer.css";
+import "@lastfm-viewer/ui/styles/ErrorView.css";
+import "@lastfm-viewer/ui/styles/PastTracks.css";
+import "@lastfm-viewer/ui/styles/TrackProgressBar.css";
+import "@lastfm-viewer/ui/styles/CardFooter.css";
+import "@lastfm-viewer/ui/styles";
 
 export interface Props {
 	api_key: string;
@@ -70,7 +73,7 @@ const ReactLastFMViewer = ({
 				value={{ colors: colors, track: track, loading: loading }}
 			>
 				<div
-					className={styles.lfmvCard}
+					className={`lfmvCard`}
 					style={{ background: colors?.primary }}
 					data-lfmv="dark"
 				>
@@ -118,17 +121,15 @@ const ReactLastFMViewer = ({
 										)}
 									</LoadingSkeleton>
 									<h1
-										className={styles.trackTitle}
+										className={`trackTitle`}
 										style={{ color: colors?.secondary }}
 									>
 										<LoadingSkeleton
-											className={styles.titleSkeleton}
+											className={`titleSkeleton`}
 											fallback="Track title not available"
 										>
 											{track?.artistName && (
-												<span
-													className={styles.infoSpan}
-												>
+												<span className={`infoSpan`}>
 													{track?.trackName}
 												</span>
 											)}
@@ -139,26 +140,22 @@ const ReactLastFMViewer = ({
 										className="flex flex-col gap-2"
 									>
 										<LoadingSkeleton
-											className={styles.titleSkeleton}
+											className={`titleSkeleton`}
 											fallback="Artist name not available"
 										>
 											{track?.artistName && (
-												<span
-													className={styles.infoSpan}
-												>
+												<span className={`infoSpan`}>
 													<FaRegUser />
 													{track?.artistName}
 												</span>
 											)}
 										</LoadingSkeleton>
 										<LoadingSkeleton
-											className={styles.titleSkeleton}
+											className={`titleSkeleton`}
 											fallback="Album name not available"
 										>
 											{track?.albumTitle && (
-												<span
-													className={styles.infoSpan}
-												>
+												<span className={`infoSpan`}>
 													<FaCompactDisc />
 													{track?.albumTitle}
 												</span>
@@ -166,7 +163,7 @@ const ReactLastFMViewer = ({
 										</LoadingSkeleton>
 									</div>
 								</div>
-								<div className={styles.cardBody}>
+								<div className={`cardBody`}>
 									<PastTracks />
 									<CardFooter user={user} colors={colors} />
 								</div>

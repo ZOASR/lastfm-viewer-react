@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { lfmContext } from "../ReactLastFMViewer";
 import { FaRegUser, FaCalendar } from "react-icons/fa";
-import styles from "@lastfm-viewer/ui/PastTracks.module.css";
 import LoadingSkeleton from "../LoadingSkeleton/LoadingSkeleton";
 
 const PastTracks = () => {
@@ -9,7 +8,7 @@ const PastTracks = () => {
 	return (
 		<>
 			<div
-				className={styles.pastTracks}
+				className={`pastTracks`}
 				style={{
 					color: context.colors?.secondary,
 					background: context.colors?.accent
@@ -17,7 +16,7 @@ const PastTracks = () => {
 			>
 				<LoadingSkeleton className="h-[200px]" fallback={undefined}>
 					<div
-						className={styles.pastTracks__title}
+						className={`pastTracks__title`}
 						style={{
 							color: context.colors?.secondary,
 							background: context.colors?.primary
@@ -36,16 +35,14 @@ const PastTracks = () => {
 												track_.date["#text"] +
 												track_.name
 											}
-											className={styles.pastTracks__track}
+											className={`pastTracks__track`}
 										>
 											<div className="divider m-0.5 h-min"></div>
-											<div className={styles.scrollable}>
+											<div className={`scrollable`}>
 												<a
 													href={track_.url}
 													target="_blank"
-													className={
-														styles.pastTracks__trackTitle
-													}
+													className={`pastTracks__trackTitle`}
 													style={{
 														color: context.colors
 															?.secondary
@@ -54,9 +51,7 @@ const PastTracks = () => {
 													{track_.name}
 												</a>
 												<span
-													className={
-														styles.scrollable__artist
-													}
+													className={`scrollable__artist`}
 													style={{
 														color: context.colors
 															?.secondary
@@ -66,9 +61,7 @@ const PastTracks = () => {
 													{track_.artist["#text"]}
 												</span>
 												<span
-													className={
-														styles.scrollable__date
-													}
+													className={`scrollable__date`}
 													style={{
 														color: context.colors
 															?.secondary

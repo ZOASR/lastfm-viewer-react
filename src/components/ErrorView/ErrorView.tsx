@@ -1,5 +1,3 @@
-import styles from "@lastfm-viewer/ui/ErrorView.module.css";
-
 const ErrorView = ({
 	message,
 	mode
@@ -16,7 +14,7 @@ const ErrorView = ({
 				</h1>
 			)}
 
-			<div className={styles.errorView}>
+			<div className={`errorView`}>
 				<span>Error</span>
 				{message}
 			</div>

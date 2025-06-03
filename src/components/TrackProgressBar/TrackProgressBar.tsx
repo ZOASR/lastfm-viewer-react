@@ -1,29 +1,28 @@
 import { useContext } from "react";
 import { lfmContext } from "../ReactLastFMViewer";
-import styles from "@lastfm-viewer/ui/TrackProgressBar.module.css";
 import { msToMins, msToSecs } from "@lastfm-viewer/utils/utils";
 
 const TrackProgressBar = () => {
 	const context = useContext(lfmContext);
 	return (
 		<>
-			<div className={styles.trackProgress}>
-				<span className={styles.nowplaying}> Now Playing</span>
-				<div className={styles.icon}>
+			<div className={`trackProgress`}>
+				<span className={`nowplaying`}> Now Playing</span>
+				<div className={`icon`}>
 					<span
-						className={styles.musicbar}
+						className={`musicbar`}
 						style={{
 							background: context?.colors?.secondary
 						}}
 					/>
 					<span
-						className={styles.musicbar}
+						className={`musicbar`}
 						style={{
 							background: context?.colors?.secondary
 						}}
 					/>
 					<span
-						className={styles.musicbar}
+						className={`musicbar`}
 						style={{
 							background: context?.colors?.secondary
 						}}
@@ -31,7 +30,7 @@ const TrackProgressBar = () => {
 				</div>
 			</div>
 			<div
-				className={styles.bar}
+				className={`bar`}
 				style={{ color: context?.colors?.secondary }}
 			>
 				<span>00:00</span>
