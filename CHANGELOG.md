@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### Breaking
+
+- Transfered scoping to postcss-scope plugin and removed css modules
+- Upgraded to react 19 due to incompatibility with previous versions of react when used together
+
+## [2.3.5] - 2025-06-03
+
 ### Dev
 
 - Added a button to toggle between dev component and live component
@@ -16,6 +23,7 @@ All notable changes to this project will be documented in this file.
 ### Update
 
 - V2.3.4
+- V2.3.5
 
 ## [2.3.4] - 2024-09-08
 
