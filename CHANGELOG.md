@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file.
 - Adapting colors based on prefered color scheme (dark&light)
 - Fixed a scoping issue that causes tailwind v3 styles to clash with v4
 
+### Update
+
+- V2.3.4
+
 ## [2.3.4] - 2024-09-08
 
 ### Dev
