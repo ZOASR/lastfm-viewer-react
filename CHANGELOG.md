@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ### Dev
 
+- Added a button to toggle between dev component and live component
+
+### Ui
+
+- Adapting colors based on prefered color scheme (dark&light)
+- Fixed a scoping issue that causes tailwind v3 styles to clash with v4
+
+## [2.3.4] - 2024-09-08
+
+### Dev
+
 - Unused import
 - Root app width
 
@@ -14,6 +25,10 @@ All notable changes to this project will be documented in this file.
 - Replaced default album cover with an icon
 - Replaced drop-shadow in ablum cover with a drop-shadow
 - Fixed card footer component layout and changed user icon styles
+
+### Update
+
+- V2.3.4
 
 ## [2.3.3] - 2024-07-15
 
