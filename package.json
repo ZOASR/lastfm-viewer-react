@@ -43,8 +43,8 @@
     "changelog": " git-cliff > CHANGELOG.md && git add . && git commit -m \"update: v%npm_package_version%\" && git tag v%npm_package_version% && git push origin v%npm_package_version% && git push origin"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@lastfm-viewer/eslint-config": "workspace:*",
@@ -53,8 +53,8 @@
     "@lastfm-viewer/utils": "workspace:*",
     "@lastfm-viewer/vite-config": "workspace:*",
     "@types/node": "^20.14.5",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react": "^4.3.1",
