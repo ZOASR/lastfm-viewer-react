@@ -74,95 +74,105 @@ const ReactLastFMViewer = ({
 					style={{ background: colors?.primary }}
 					data-lfmv="dark"
 				>
-					{track instanceof Error ? (
-						<ErrorView mode={mode} message={message} />
-					) : (
-						<>
-							<div>
-								<figure
-									style={{
-										filter: ` drop-shadow(0 0 20px ${colors?.coverShadowColor} ) `
-									}}
-								>
-									{track?.imageUrl ? (
-										<img
-											src={track.imageUrl}
-											alt="Album Cover"
-										/>
-									) : (
+					<div data-lfmv="">
+						{track instanceof Error ? (
+							<ErrorView mode={mode} message={message} />
+						) : (
+							<>
+								<div>
+									<figure
+										style={{
+											filter: ` drop-shadow(0 0 20px ${colors?.coverShadowColor} ) `
+										}}
+									>
+										{track?.imageUrl ? (
+											<img
+												src={track.imageUrl}
+												alt="Album Cover"
+											/>
+										) : (
+											<LoadingSkeleton
+												className="mx-auto h-[300px] w-[300px]"
+												fallback={
+													<div
+														className={`h-[300px] [color:var(--default-secondary)] ${track?.nowplaying && "!animate-spin-slow"}`}
+													>
+														<BsDiscFill className="h-full w-full" />
+													</div>
+													// <img
+													// 	src={disc}
+													// 	alt="Default album cover thumbnail"
+													// />
+												}
+											>
+												{null}
+											</LoadingSkeleton>
+										)}
+									</figure>
+									<LoadingSkeleton
+										className="mx-auto h-[40px] w-[90%]"
+										fallback={null}
+									>
+										{track?.nowplaying && (
+											<TrackProgressBar />
+										)}
+									</LoadingSkeleton>
+									<h1
+										className={styles.trackTitle}
+										style={{ color: colors?.secondary }}
+									>
 										<LoadingSkeleton
-											className="mx-auto h-[300px] w-[300px]"
-											fallback={
-												<div
-													className={`h-[300px] [color:var(--default-secondary)] ${track?.nowplaying && "!animate-spin-slow"}`}
-												>
-													<BsDiscFill className="h-full w-full" />
-												</div>
-												// <img
-												// 	src={disc}
-												// 	alt="Default album cover thumbnail"
-												// />
-											}
+											className={styles.titleSkeleton}
+											fallback="Track title not available"
 										>
-											{null}
+											{track?.artistName && (
+												<span
+													className={styles.infoSpan}
+												>
+													{track?.trackName}
+												</span>
+											)}
 										</LoadingSkeleton>
-									)}
-								</figure>
-								<LoadingSkeleton
-									className="mx-auto h-[40px] w-[90%]"
-									fallback={null}
-								>
-									{track?.nowplaying && <TrackProgressBar />}
-								</LoadingSkeleton>
-								<h1
-									className={styles.trackTitle}
-									style={{ color: colors?.secondary }}
-								>
-									<LoadingSkeleton
-										className={styles.titleSkeleton}
-										fallback="Track title not available"
+									</h1>
+									<div
+										style={{ color: colors?.secondary }}
+										className="flex flex-col gap-2"
 									>
-										{track?.artistName && (
-											<span className={styles.infoSpan}>
-												{track?.trackName}
-											</span>
-										)}
-									</LoadingSkeleton>
-								</h1>
-								<div
-									style={{ color: colors?.secondary }}
-									className="flex flex-col gap-2"
-								>
-									<LoadingSkeleton
-										className={styles.titleSkeleton}
-										fallback="Artist name not available"
-									>
-										{track?.artistName && (
-											<span className={styles.infoSpan}>
-												<FaRegUser />
-												{track?.artistName}
-											</span>
-										)}
-									</LoadingSkeleton>
-									<LoadingSkeleton
-										className={styles.titleSkeleton}
-										fallback="Album name not available"
-									>
-										{track?.albumTitle && (
-											<span className={styles.infoSpan}>
-												<FaCompactDisc />
-												{track?.albumTitle}
-											</span>
-										)}
-									</LoadingSkeleton>
+										<LoadingSkeleton
+											className={styles.titleSkeleton}
+											fallback="Artist name not available"
+										>
+											{track?.artistName && (
+												<span
+													className={styles.infoSpan}
+												>
+													<FaRegUser />
+													{track?.artistName}
+												</span>
+											)}
+										</LoadingSkeleton>
+										<LoadingSkeleton
+											className={styles.titleSkeleton}
+											fallback="Album name not available"
+										>
+											{track?.albumTitle && (
+												<span
+													className={styles.infoSpan}
+												>
+													<FaCompactDisc />
+													{track?.albumTitle}
+												</span>
+											)}
+										</LoadingSkeleton>
+									</div>
 								</div>
-							</div>
-							<div className={styles.cardBody}>
-								<PastTracks />
-								<CardFooter user={user} colors={colors} />
-							</div>
-						</>
-					)}
+								<div className={styles.cardBody}>
+									<PastTracks />
+									<CardFooter user={user} colors={colors} />
+								</div>
+							</>
+						)}
+					</div>
 				</div>
 			</lfmContext.Provider>
 		</>
