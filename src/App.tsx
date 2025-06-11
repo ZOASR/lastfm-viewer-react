@@ -13,7 +13,7 @@ function App() {
 			{!isTest ? (
 				<ReactLastFMViewer user="ZOASR" updateInterval={20000} />
 			) : (
-				<Test api_key={import.meta.env.VITE_API_KEY} />
+				<Test />
 			)}
 		</>
 	);

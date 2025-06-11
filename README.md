@@ -47,7 +47,7 @@ import ReactLastFMViewer from "@lastfm-viewer/react";
 function App() {
 	return (
 		<>
-			<ReactLastFMViewer user="[username]" api_key="[API_KEY]" />
+			<ReactLastFMViewer user="[username]" />
 		</>
 	);
 }
@@ -67,14 +67,6 @@ last.fm username
 <img width="50%" src="./images/divider.svg" />
 </p>
 
-### `api_key: string` :
-
-your last.fm public api key
-
-<p align="center">
-<img width="50%" src="./images/divider.svg" />
-</p>
-
 ### `updateInterval?: number` :
 
 if you want to frequently fetch the user's listening info just specify the `updateInterval` prop. (milliseconds) (it takes a number that determines the update interval):
@@ -87,7 +79,6 @@ function App() {
 		<>
 			<ReactLastFMViewer
 				user="[username]"
-				api_key="[API_KEY]"
 				updateInterval={20000} {/* 20 seconds */}
 			/>
 		</>
