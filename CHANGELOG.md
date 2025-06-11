@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Refactor
 
+- Remove api_key prop from Test component and update usage in App and README for consistency
+
+## [3.0.0] - 2025-06-11
+
+### Refactor
+
 - Removed api_key prop from ReactLastFMViewer component and useLastfmViewer hook as it's not needed anymore
 
 ### Ui
@@ -15,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ### Update
 
 - V2.4.2
+- V3.0.0
 
 ## [2.4.2] - 2025-06-04
 
