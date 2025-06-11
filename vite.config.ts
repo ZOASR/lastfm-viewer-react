@@ -14,14 +14,15 @@ export default defineConfig({
 			name: "react-lastfm-viewer",
 			fileName: (format) => `index.${format}.js`
 		},
-		rollupOptions: {
-			external: ["react", "react-dom"],
-			output: {
-				globals: {
-					react: "react",
-					"react-dom": "ReactDOM"
-				}
-			}
+	rollupOptions: {
+		external: ["react", "react-dom"],
+		output: {
+			globals: {
+				react: "react",
+				"react-dom": "ReactDOM"
+			},
+			sourcemapExcludeSources: true
 		}
+	}
 	}
 });
