@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Refactor
+
+- Removed api_key prop from ReactLastFMViewer component and useLastfmViewer hook as it's not needed anymore
+
+### Ui
+
+- Adjust loading skeleton size in ReactLastFMViewer component for improved responsiveness
+
+### Update
+
+- V2.4.2
+
 ## [2.4.2] - 2025-06-04
 
 ### Update

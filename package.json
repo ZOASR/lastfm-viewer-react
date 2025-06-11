@@ -1,7 +1,7 @@
 {
   "name": "@lastfm-viewer/react",
   "private": false,
-  "version": "2.4.2",
+  "version": "3.0.0",
   "description": "A React component to view recent scrobbles for a last.fm user",
   "homepage": "https://lastfm-viewer.vercel.app/",
   "license": "GPL-3.0",
