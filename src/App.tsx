@@ -11,11 +11,7 @@ function App() {
 				View {isTest ? "Live" : "Test"}
 			</button>
 			{!isTest ? (
-				<ReactLastFMViewer
-					user="ZOASR"
-					api_key={import.meta.env.VITE_API_KEY}
-					updateInterval={20000}
-				/>
+				<ReactLastFMViewer user="ZOASR" updateInterval={20000} />
 			) : (
 				<Test api_key={import.meta.env.VITE_API_KEY} />
 			)}

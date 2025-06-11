@@ -12,7 +12,6 @@ type lfmvHook = {
 
 export const useLastfmViewer: (obj: Props) => lfmvHook = ({
 	user,
-	api_key,
 	updateInterval
 }: Props) => {
 	const [track, setTrack] = useState<TrackInfo | Error>();
@@ -22,7 +21,7 @@ export const useLastfmViewer: (obj: Props) => lfmvHook = ({
 
 	useEffect(() => {
 		const get = async () => {
-			const data: TrackInfo | Error = await getLatestTrack(user, api_key);
+			const data: TrackInfo | Error = await getLatestTrack(user);
 			if (data instanceof Error) {
 				setTrack(data);
 				setMessage(data.message);
@@ -43,7 +42,7 @@ export const useLastfmViewer: (obj: Props) => lfmvHook = ({
 		return () => {
 			if (updateInterval) clearInterval(intervalRef);
 		};
-	}, [user, api_key, updateInterval]);
+	}, [user, updateInterval]);
 
 	return {
 		track,

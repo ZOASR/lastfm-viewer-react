@@ -18,7 +18,6 @@ import "@lastfm-viewer/ui/styles/CardFooter.css";
 import "@lastfm-viewer/ui/styles";
 
 export interface Props {
-	api_key: string;
 	user: string;
 	updateInterval?: number;
 	mode?: "dev" | "prod";
@@ -48,14 +47,8 @@ export const lfmContext = createContext<{
 	loading: true
 });
 
-const ReactLastFMViewer = ({
-	api_key,
-	user,
-	updateInterval,
-	mode = "dev"
-}: Props) => {
+const ReactLastFMViewer = ({ user, updateInterval, mode = "dev" }: Props) => {
 	const { track, colors, loading, message } = useLastfmViewer({
-		api_key,
 		user,
 		updateInterval
 	});
@@ -64,10 +57,11 @@ const ReactLastFMViewer = ({
 		<>
 			{/* preconnects */}
 			<link href="https://lastfm.freetls.fastly.net" rel="preconnect" />
-			<link href="https://archive.org" rel="preconnect" />
 			<link href="https://coverartarchive.org" rel="preconnect" />
-			<link href="https://musicbrainz.org" rel="preconnect" />
-			<link href="https://ws.audioscrobbler.com" rel="preconnect" />
+			<link
+				href="https://lastfm-viewer-api.cloudflare-untying955.workers.dev"
+				rel="preconnect"
+			/>
 			{/* preconnects */}
 			<lfmContext.Provider
 				value={{ colors: colors, track: track, loading: loading }}
