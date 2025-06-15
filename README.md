@@ -86,9 +86,6 @@ function App() {
 }
 ```
 
-> [!CAUTION]
-> setting the `updateInterval` prop to a low number might subject your api key for termination, to avoid this just use a higher more reasonable number.
-
 <p align="center">
 <img width="50%" src="./images/divider.svg" />
 </p>
