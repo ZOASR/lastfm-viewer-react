@@ -73,7 +73,7 @@ const ReactLastFMViewer = ({ user, updateInterval, mode = "dev" }: Props) => {
 				>
 					<div data-lfmv="">
 						{track instanceof Error ? (
-							<ErrorView mode={mode} message={message} />
+							<ErrorView mode={mode} error={track as Error} />
 						) : (
 							<>
 								<div>

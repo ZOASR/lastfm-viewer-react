@@ -1,10 +1,4 @@
-const ErrorView = ({
-	message,
-	mode
-}: {
-	message: string;
-	mode: "prod" | "dev";
-}) => {
+const ErrorView = ({ error, mode }: { error: Error; mode: "prod" | "dev" }) => {
 	return (
 		<div>
 			{mode === "dev" && (
@@ -15,8 +9,8 @@ const ErrorView = ({
 			)}
 
 			<div className={`errorView`}>
-				<span>Error</span>
-				{message}
+				<span>{error.name}</span>
+				{error.message}
 			</div>
 		</div>
 	);
