@@ -48,7 +48,7 @@ export const lfmContext = createContext<{
 });
 
 const ReactLastFMViewer = ({ user, updateInterval, mode = "dev" }: Props) => {
-	const { track, colors, loading, message } = useLastfmViewer({
+	const { track, colors, loading } = useLastfmViewer({
 		user,
 		updateInterval
 	});
