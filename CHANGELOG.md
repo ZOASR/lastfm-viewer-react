@@ -4,9 +4,38 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### Bug Fixes
+
+- Removed tailwind content config to avoid generating extra styles during dev
+- Update library name in Vite config for consistency
+- Enforce minimum updateInterval for useLastfmViewer to prevent rate limiting
+
+### Documentation
+
+- Remove caution note about updateInterval prop from README and update image previews
+
+### Features
+
+- Optimize source maps by excluding embedded source content
+
+### Refactor
+
+- Update ErrorView component to accept Error object instead of message string
+- Remove unused message variable from useLastfmViewer destructuring
+
+### Ui
+
+- Fix wrong size for album cover size skeleton when loading
+
+## [3.0.1] - 2025-06-11
+
 ### Refactor
 
 - Remove api_key prop from Test component and update usage in App and README for consistency
+
+### Update
+
+- V3.0.1
 
 ## [3.0.0] - 2025-06-11
 
