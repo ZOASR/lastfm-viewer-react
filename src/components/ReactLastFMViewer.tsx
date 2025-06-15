@@ -89,7 +89,7 @@ const ReactLastFMViewer = ({ user, updateInterval, mode = "dev" }: Props) => {
 											/>
 										) : (
 											<LoadingSkeleton
-												className="mx-auto h-[100px] w-[100px] sm:h-[300px] sm:w-[300px]"
+												className="mx-auto aspect-square w-full"
 												fallback={
 													<div
 														className={`h-[100px] [color:var(--default-secondary)] sm:h-[300px] ${track?.nowplaying && "!animate-spin-slow"}`}
