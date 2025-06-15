@@ -11,18 +11,18 @@ export default defineConfig({
 		...viteConfigs.build,
 		lib: {
 			entry: path.resolve(__dirname, "index.ts"),
-			name: "react-lastfm-viewer",
+			name: "@lastfm-viewer/react",
 			fileName: (format) => `index.${format}.js`
 		},
-	rollupOptions: {
-		external: ["react", "react-dom"],
-		output: {
-			globals: {
-				react: "react",
-				"react-dom": "ReactDOM"
-			},
-			sourcemapExcludeSources: true
+		rollupOptions: {
+			external: ["react", "react-dom"],
+			output: {
+				globals: {
+					react: "react",
+					"react-dom": "ReactDOM"
+				},
+				sourcemapExcludeSources: true
+			}
 		}
-	}
 	}
 });
