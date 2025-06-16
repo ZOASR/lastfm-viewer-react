@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [unreleased]
+## [3.1.0] - 2025-06-15
 
 ### Bug Fixes
 
@@ -26,6 +26,10 @@ All notable changes to this project will be documented in this file.
 ### Ui
 
 - Fix wrong size for album cover size skeleton when loading
+
+### Update
+
+- V3.1.0
 
 ## [3.0.1] - 2025-06-11
 
